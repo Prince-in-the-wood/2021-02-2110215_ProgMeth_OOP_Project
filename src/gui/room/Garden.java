@@ -2,9 +2,9 @@ package gui.room;
 
 import gui.base.Room;
 
-public class LivingRoom extends Room{
+public class Garden extends Room{
 
-	public LivingRoom(String name, String startText, String endText) {
+	public Garden(String name, String startText, String endText) {
 		super(name, startText, endText);
 		// TODO Auto-generated constructor stub
 	}
