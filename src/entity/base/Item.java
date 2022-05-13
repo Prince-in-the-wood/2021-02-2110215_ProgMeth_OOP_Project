@@ -4,7 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import sharedObject.IRenderable;
 import sharedObject.RenderableHolder;
 
-public class Item implements IRenderable{
+public abstract class Item implements IRenderable{
 	
 	private String name;
 	private double xPosition;
