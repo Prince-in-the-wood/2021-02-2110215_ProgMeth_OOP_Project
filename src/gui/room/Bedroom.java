@@ -1,6 +1,6 @@
 package gui.room;
 
-import gui.base.Room;
+import entity.base.Room;
 
 public class Bedroom extends Room{
 

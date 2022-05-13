@@ -1,7 +1,7 @@
 package logic;
 
-import gui.base.Emotion;
-import gui.base.Item;
+import entity.base.Emotion;
+import entity.base.Item;
 
 public class Player {
 	private Item itemInHand;
