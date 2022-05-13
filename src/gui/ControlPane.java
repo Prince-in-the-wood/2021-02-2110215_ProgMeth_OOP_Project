@@ -31,6 +31,7 @@ public class ControlPane extends VBox{
 		String buttonStyle = "-fx-background-color: transparent; -fx-text-fill: #FFBD51; "
 							+ "-fx-font-family: "+ RenderableHolder.juiceICTFont.toString();
 		shadow.setColor(Color.WHEAT);
+		shadow.setRadius(20.0);
 		
 		button.setStyle(buttonStyle);
 		button.setFont(RenderableHolder.juiceICTFont);
