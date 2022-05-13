@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
+import entity.base.Emotion;
 import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
 
@@ -16,6 +17,8 @@ public class RenderableHolder {
 	private Comparator<IRenderable> comparator;
 	public static Map<String, Image> furnitureSprite;
 	public static Map<String, Image> itemSprite;
+	public static Map<Emotion, Image> characterFullBody;
+	public static Map<String, Image> characterSprite;
 	public static Map<String, Image> background;
 	public static Map<String, AudioClip> soundFX;
 	public static Map<String, AudioClip> bgMusic;
@@ -38,8 +41,8 @@ public class RenderableHolder {
 	}
 
 	public static void loadResource() {
-		background.put("Main Menu",new Image(ClassLoader.getSystemResource("Main_Maenu.png").toString()));
-		bgMusic.put("Main Menu", new AudioClip(ClassLoader.getSystemResource("Main_Menu.wav").toString()));
+		background.put("MainMenu",new Image(ClassLoader.getSystemResource("MainMenu.png").toString()));
+		bgMusic.put("MainMenu", new AudioClip(ClassLoader.getSystemResource("MainMenu.wav").toString()));
 	}
 
 	public void add(IRenderable entity) {
