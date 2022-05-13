@@ -10,6 +10,7 @@ import java.util.Map;
 import entity.base.Emotion;
 import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
+import javafx.scene.text.Font;
 
 public class RenderableHolder {
 	private static final RenderableHolder instance = new RenderableHolder();
@@ -23,6 +24,8 @@ public class RenderableHolder {
 	public static Map<String, Image> background = new HashMap<String, Image>();
 	public static Map<String, AudioClip> soundFX = new HashMap<String, AudioClip>();
 	public static Map<String, AudioClip> bgMusic = new HashMap<String, AudioClip>();
+	public static Font juiceICTFont;
+	public static Font couriterryFont;
 
 	static {
 		loadResource();
@@ -43,6 +46,10 @@ public class RenderableHolder {
 
 	public static void loadResource() {
 		background.put("MainMenu",new Image(ClassLoader.getSystemResource("MainMenu.png").toString()));
+		background.put("Logo",new Image(ClassLoader.getSystemResource("Logo.png").toString()));
+		
+		juiceICTFont = Font.loadFont( ClassLoader.getSystemResource("JUICE.ttf").toString(), 45 );
+		couriterryFont = Font.loadFont( ClassLoader.getSystemResource("AatrixCOURITER.ttf").toString(), 20 );
 		//bgMusic.put("MainMenu", new AudioClip(ClassLoader.getSystemResource("MainMenu.wav").toString()));
 	}
 
