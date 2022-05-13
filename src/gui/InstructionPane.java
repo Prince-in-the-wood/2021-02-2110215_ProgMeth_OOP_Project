@@ -1,6 +1,8 @@
 package gui;
 
-public class InstructionPane extends SupportPane {
+import javafx.scene.layout.VBox;
+
+public class InstructionPane extends VBox {
 	public InstructionPane() {
 		
 	}
