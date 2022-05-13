@@ -48,6 +48,7 @@ public class RenderableHolder {
 		background.put("MainMenu",new Image(ClassLoader.getSystemResource("MainMenu.png").toString()));
 		background.put("Logo",new Image(ClassLoader.getSystemResource("Logo.png").toString()));
 		background.put("OldPaper",new Image(ClassLoader.getSystemResource("OldPaperBG.jpeg").toString()));
+		background.put("HowToPlay",new Image(ClassLoader.getSystemResource("HowToPlay.png").toString()));
 		juiceICTFont = Font.loadFont( ClassLoader.getSystemResource("JUICE.ttf").toString(), 45 );
 		couriterryFont = Font.loadFont( ClassLoader.getSystemResource("AatrixCOURITER.ttf").toString(), 20 );
 		//bgMusic.put("MainMenu", new AudioClip(ClassLoader.getSystemResource("MainMenu.wav").toString()));
