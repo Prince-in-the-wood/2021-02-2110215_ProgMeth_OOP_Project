@@ -3,6 +3,7 @@ package sharedObject;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,13 +16,13 @@ public class RenderableHolder {
 
 	private List<IRenderable> entities;
 	private Comparator<IRenderable> comparator;
-	public static Map<String, Image> furnitureSprite;
-	public static Map<String, Image> itemSprite;
-	public static Map<Emotion, Image> characterFullBody;
-	public static Map<String, Image> characterSprite;
-	public static Map<String, Image> background;
-	public static Map<String, AudioClip> soundFX;
-	public static Map<String, AudioClip> bgMusic;
+	public static Map<String, Image> furnitureSprite = new HashMap<String, Image>();
+	public static Map<String, Image> itemSprite = new HashMap<String, Image>();
+	public static Map<Emotion, Image> characterFullBody = new HashMap<Emotion, Image>();
+	public static Map<String, Image> characterSprite = new HashMap<String, Image>();
+	public static Map<String, Image> background = new HashMap<String, Image>();
+	public static Map<String, AudioClip> soundFX = new HashMap<String, AudioClip>();
+	public static Map<String, AudioClip> bgMusic = new HashMap<String, AudioClip>();
 
 	static {
 		loadResource();
@@ -42,7 +43,7 @@ public class RenderableHolder {
 
 	public static void loadResource() {
 		background.put("MainMenu",new Image(ClassLoader.getSystemResource("MainMenu.png").toString()));
-		bgMusic.put("MainMenu", new AudioClip(ClassLoader.getSystemResource("MainMenu.wav").toString()));
+		//bgMusic.put("MainMenu", new AudioClip(ClassLoader.getSystemResource("MainMenu.wav").toString()));
 	}
 
 	public void add(IRenderable entity) {
