@@ -1,12 +1,15 @@
 package entity.base;
 //Abstract Class
 
+import javafx.scene.canvas.GraphicsContext;
 import sharedObject.IRenderable;
+import sharedObject.RenderableHolder;
 
 public abstract class Furniture implements IRenderable{
 	private String name;
-	private int xPosition;
-	private int yPosition;
+	private double xPosition;
+	private double yPosition;
+	private int z;
 	
 	public Furniture(String name, int xPosition, int yPosition) {
 		setName(name);
@@ -24,19 +27,19 @@ public abstract class Furniture implements IRenderable{
 		this.name = name;
 	}
 
-	public int getxPosition() {
+	public double getxPosition() {
 		return xPosition;
 	}
 
-	public void setxPosition(int xPosition) {
+	public void setxPosition(double xPosition) {
 		this.xPosition = xPosition;
 	}
 
-	public int getyPosition() {
+	public double getyPosition() {
 		return yPosition;
 	}
 
-	public void setyPosition(int yPosition) {
+	public void setyPosition(double yPosition) {
 		this.yPosition = yPosition;
 	}
 	
@@ -44,5 +47,15 @@ public abstract class Furniture implements IRenderable{
 	@Override
 	public String toString() {
 		return "This is a normal " + this.name;
+	}
+	
+	@Override
+	public int getZ() {
+		return z;
+	}
+
+	@Override
+	public void draw(GraphicsContext gc) {
+		gc.drawImage(RenderableHolder.furnitureSprite.get(this.name) , xPosition, yPosition);
 	}
 }
