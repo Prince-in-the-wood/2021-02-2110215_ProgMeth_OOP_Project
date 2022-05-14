@@ -58,4 +58,30 @@ public abstract class Furniture implements IRenderable{
 	public void draw(GraphicsContext gc) {
 		gc.drawImage(RenderableHolder.furnitureSprite.get(this.name) , xPosition, yPosition);
 	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Furniture other = (Furniture) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (Double.doubleToLongBits(xPosition) != Double.doubleToLongBits(other.xPosition))
+			return false;
+		if (Double.doubleToLongBits(yPosition) != Double.doubleToLongBits(other.yPosition))
+			return false;
+		if (z != other.z)
+			return false;
+		return true;
+	}
+	
+	
 }
