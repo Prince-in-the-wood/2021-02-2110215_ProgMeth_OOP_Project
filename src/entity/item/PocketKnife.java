@@ -32,7 +32,7 @@ public class PocketKnife extends Item implements Pickable{
 		return isPicked;
 	}
 	
-	public boolean isMacthed(Furniture furniture) {
+	public boolean useWith(Furniture furniture) {
 		if( furniture.equals(matchedFurniture)) {
 			ItemInHandBox.deleteImageInBox();
 			setIsPicked(false);
