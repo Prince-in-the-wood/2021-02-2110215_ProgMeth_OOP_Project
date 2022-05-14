@@ -1,6 +1,7 @@
 package entity.base;
 //Abstract Class
 
+import gui.DialoguePane;
 import javafx.scene.canvas.GraphicsContext;
 import sharedObject.IRenderable;
 import sharedObject.RenderableHolder;
@@ -98,8 +99,12 @@ public abstract class Furniture implements IRenderable{
 		return true;
 	}
 	
-	public String observe() {
-		return this.toString();
+	public void observe() {
+		DialoguePane.setGameText(this.toString());
+	}
+	
+	public void useItem() {
+		DialoguePane.setGameText("I think it's better to use it somewhere");
 	}
 	
 	
