@@ -15,7 +15,7 @@ import sharedObject.RenderableHolder;
 
 public class DialoguePane extends StackPane{
 	
-	private Text gameText;
+	private static Text gameText;
 	
 	public DialoguePane() {
 		gameText = new Text("Hello I'm Anna");
@@ -34,5 +34,8 @@ public class DialoguePane extends StackPane{
 		this.setMinSize(810, 140);
 	}
 	
+	public static void setGameText(String text) {
+		gameText.setText(text);
+	}
 	
 }
