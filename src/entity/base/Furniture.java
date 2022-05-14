@@ -98,5 +98,9 @@ public abstract class Furniture implements IRenderable{
 		return true;
 	}
 	
+	public String observe() {
+		return this.toString();
+	}
+	
 	
 }
