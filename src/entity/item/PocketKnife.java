@@ -1,43 +1,61 @@
 package entity.item;
 
+import entity.base.Furniture;
 import entity.base.Item;
 import entity.base.Pickable;
+import gui.ItemInHandBox;
+import sharedObject.RenderableHolder;
 
 public class PocketKnife extends Item implements Pickable{
-	private final String pocketKnifeURL;
+
 	private boolean isPicked;
+	private Furniture matchedFurniture;
 	
-	public PocketKnife(String name) {
+	public PocketKnife(String name, Furniture matchedFurniture) {
 		super(name);
-		// TODO Auto-generated constructor stub
 		
-		this.pocketKnifeURL = "pocketKnife.png";
-		setPicked(false);
+		setMatchedFurniture(matchedFurniture);
+		setIsPicked(false);
 		
 	}
 
 	
 	@Override
 	public void pick() {
-		// TODO Auto-generated method stub
-		
+		ItemInHandBox.setImageInBox(RenderableHolder.itemSprite.get("PocketKnife") );
+		setIsPicked(true);
+		super.setIsVisible(false);
 	}
 
 	@Override
 	public boolean isPicked() {
-		// TODO Auto-generated method stub
 		return isPicked;
+	}
+	
+	public boolean isMacthed(Furniture furniture) {
+		if( furniture.equals(matchedFurniture)) {
+			ItemInHandBox.deleteImageInBox();
+			setIsPicked(false);
+			return true;
+		}
+		return false;
 	}
 
 
 	//getter and setter
-	public String getPocketKnifeURL() {
-		return pocketKnifeURL;
+
+	public void setIsPicked(boolean isPicked) {
+		this.isPicked = isPicked;
 	}
 
 
-	public void setPicked(boolean isPicked) {
-		this.isPicked = isPicked;
+	public Furniture getMatchedFurniture() {
+		return matchedFurniture;
+	}
+
+
+	public void setMatchedFurniture(Furniture matchedFurniture) {
+		this.matchedFurniture = matchedFurniture;
 	}
 
 }
