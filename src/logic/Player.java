@@ -12,7 +12,7 @@ public class Player {
 		playEmotion = Emotion.NORMAL;
 	}
 
-	public Item getItemInHand() {
+	public static Item getItemInHand() {
 		return itemInHand;
 	}
 

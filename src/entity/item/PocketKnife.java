@@ -4,6 +4,7 @@ import entity.base.Furniture;
 import entity.base.Item;
 import entity.base.Pickable;
 import gui.ItemInHandBox;
+import logic.Player;
 import sharedObject.RenderableHolder;
 
 public class PocketKnife extends Item implements Pickable{
@@ -23,6 +24,7 @@ public class PocketKnife extends Item implements Pickable{
 	@Override
 	public void pick() {
 		ItemInHandBox.setImageInBox(RenderableHolder.itemSprite.get("PocketKnife") );
+		Player.setItemInHand(this);
 		setIsPicked(true);
 		super.setIsVisible(false);
 	}
@@ -35,6 +37,7 @@ public class PocketKnife extends Item implements Pickable{
 	public boolean useWith(Furniture furniture) {
 		if( furniture.equals(matchedFurniture)) {
 			ItemInHandBox.deleteImageInBox();
+			Player.setItemInHand(null);
 			setIsPicked(false);
 			return true;
 		}
