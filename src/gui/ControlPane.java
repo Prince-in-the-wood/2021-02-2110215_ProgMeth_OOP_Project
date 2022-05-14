@@ -69,7 +69,7 @@ public class ControlPane extends VBox{
 		
 		instructionButton.setOnMouseClicked(event -> {
 			RenderableHolder.soundFX.get("ButtonClick").play();
-			showInstructionWindow();
+			MainMenu.showInstructionWindow();
 			});
 	}
 	
@@ -78,7 +78,7 @@ public class ControlPane extends VBox{
 		this.initializeButtonStyle(creditButton);		
 		creditButton.setOnMouseClicked(event -> {
 			RenderableHolder.soundFX.get("ButtonClick").play();
-			showCreditWindow();
+			MainMenu.showCreditWindow();
 		});
 	}
 	
@@ -92,27 +92,5 @@ public class ControlPane extends VBox{
 	}
 	
 	
-	public void showCreditWindow() {
-		Pane showPane = MainMenu.getWindowPane();
-		Pane creditPane = MainMenu.getCreditPane();
 
-		if( showPane.getChildren().isEmpty() || !showPane.getChildren().get(0).equals(creditPane)) {
-			showPane.getChildren().clear();
-			showPane.getChildren().add(creditPane);
-		}else {
-			showPane.getChildren().clear();
-		}
-	}
-	
-	public void showInstructionWindow() {
-		Pane showPane = MainMenu.getWindowPane();
-		Pane instructionPane = MainMenu.getInstructionPane();
-
-		if( showPane.getChildren().isEmpty() || !showPane.getChildren().get(0).equals(instructionPane)) {
-			showPane.getChildren().clear();
-			showPane.getChildren().add(instructionPane);
-		}else {
-			showPane.getChildren().clear();
-		}
-	}
 }

@@ -12,6 +12,7 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import sharedObject.RenderableHolder;
@@ -78,4 +79,23 @@ public class MainMenu extends HBox{
 		return instructionPane;
 	}
 	
+	public static void showCreditWindow() {
+
+		if( windowPane.getChildren().isEmpty() || !windowPane.getChildren().get(0).equals(creditPane)) {
+			windowPane.getChildren().clear();
+			windowPane.getChildren().add(creditPane);
+		}else {
+			windowPane.getChildren().clear();
+		}
+	}
+	
+	public static void showInstructionWindow() {
+
+		if( windowPane.getChildren().isEmpty() || !windowPane.getChildren().get(0).equals(instructionPane)) {
+			windowPane.getChildren().clear();
+			windowPane.getChildren().add(instructionPane);
+		}else {
+			windowPane.getChildren().clear();
+		}
+	}
 }
