@@ -57,12 +57,5 @@ public class Statue extends Furniture implements Updateable{
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-
-	@Override
-	public boolean isVisible() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 	
 }

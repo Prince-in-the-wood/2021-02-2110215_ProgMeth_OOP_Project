@@ -10,6 +10,7 @@ public abstract class Furniture implements IRenderable{
 	private double xPosition;
 	private double yPosition;
 	private int z;
+	private boolean isVisible;
 	
 	public Furniture(String name, int xPosition, int yPosition) {
 		setName(name);
@@ -19,6 +20,7 @@ public abstract class Furniture implements IRenderable{
 
 	
 	// getter and setter
+
 	public String getName() {
 		return name;
 	}
@@ -27,22 +29,35 @@ public abstract class Furniture implements IRenderable{
 		this.name = name;
 	}
 
+
 	public double getxPosition() {
 		return xPosition;
 	}
+
 
 	public void setxPosition(double xPosition) {
 		this.xPosition = xPosition;
 	}
 
+
 	public double getyPosition() {
 		return yPosition;
 	}
 
+
 	public void setyPosition(double yPosition) {
 		this.yPosition = yPosition;
 	}
-	
+
+	@Override
+	public boolean isVisible() {
+		return isVisible;
+	}
+
+
+	public void setIsVisible(boolean isVisible) {
+		this.isVisible = isVisible;
+	}
 	
 	@Override
 	public String toString() {

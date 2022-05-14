@@ -30,13 +30,5 @@ public class Mirror extends Container implements Updateable {
 	public void setIsUpdated(boolean isUpdated) {
 		this.isUpdated = isUpdated;
 	}
-
-
-	@Override
-	public boolean isVisible() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 	
 }

@@ -10,10 +10,4 @@ public class Chair extends Furniture{
 
 	}
 
-	@Override
-	public boolean isVisible() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

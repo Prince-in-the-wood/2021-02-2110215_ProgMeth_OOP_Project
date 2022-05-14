@@ -12,10 +12,4 @@ public class Bookshelf extends Container{
 		super(name, xPosition, yPosition);		
 	}
 
-	@Override
-	public boolean isVisible() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

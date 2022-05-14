@@ -22,11 +22,4 @@ public class TableWithLamp extends Furniture implements Updateable{
 		return false;
 	}
 
-	@Override
-	public boolean isVisible() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
 }

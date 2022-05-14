@@ -36,16 +36,6 @@ public class Picture extends Furniture {
 	public void setThingBehind(ArrayList<Item> thingBehind) {
 		this.thingBehind = thingBehind;
 	}
-
-
-	@Override
-	public boolean isVisible() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	
-	
 	
 
 }
