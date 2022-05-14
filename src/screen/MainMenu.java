@@ -1,23 +1,80 @@
 package screen;
 
-public class MainMenu {
+import gui.ControlPane;
+import gui.CreditPane;
+import gui.InstructionPane;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import sharedObject.RenderableHolder;
 
-	// à¸«à¸?à¹?à¸²à¹?à¸£à¸?à¸?à¸­à¸?à¹€à¸?à¸¡
-	private final String gameLogoURL;
-	private final String backgroundURL;
+
+public class MainMenu extends BorderPane{
+	
+	private static ControlPane controlPane;
+	private static CreditPane creditPane;
+	private static InstructionPane instructionPane;
+	private static StackPane windowPane;
+	private static VBox sidePane;
+	
+	public static final int INDEFINITE = -1;
 	
 	public MainMenu() {
-		this.backgroundURL = "background.png";
-		this.gameLogoURL = "gameLogo.png";
-	}
+		
+		controlPane = new ControlPane();
+		creditPane = new CreditPane();
+		instructionPane = new InstructionPane();
+		sidePane = new VBox();
+		windowPane = new StackPane();
+		
+		sidePane.getChildren().addAll( new ImageView( RenderableHolder.background.get("Logo") ), controlPane );
+		sidePane.setPadding(new Insets(75));
+		
+		windowPane.setAlignment(Pos.CENTER);
+		windowPane.setPrefSize(700, 760);
+		windowPane.setPadding(new Insets(50));
+		
+		this.setLeft(windowPane);
+		this.setRight(sidePane);
 	
-	
-	// setter and getter
-	public String getGameLogoURL() {
-		return gameLogoURL;
+		BackgroundSize bgSize = new BackgroundSize(1120,760,false,false,false,false);
+		this.setBackground(new Background(new BackgroundImage(RenderableHolder.background.get("MainMenu"),
+		        						  null, null, BackgroundPosition.CENTER, bgSize)));
+		
+		this.setPadding(new Insets(10));
+		this.setPrefHeight(760);
+		this.setPrefWidth(1120);
+		
+		RenderableHolder.bgMusic.get("MainMenuBGM").setCycleCount(INDEFINITE);
+		RenderableHolder.bgMusic.get("MainMenuBGM").play();
 	}
 
-	public String getBackgroundURL() {
-		return backgroundURL;
+	public static ControlPane getControlPane() {
+		return controlPane;
 	}
+
+	public static StackPane getWindowPane() {
+		return windowPane;
+	}
+
+	public static VBox getSidePane() {
+		return sidePane;
+	}
+
+	public static CreditPane getCreditPane() {
+		return creditPane;
+	}
+
+	public static InstructionPane getInstructionPane() {
+		return instructionPane;
+	}
+	
 }
