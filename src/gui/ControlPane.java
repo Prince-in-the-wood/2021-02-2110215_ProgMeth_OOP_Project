@@ -1,12 +1,17 @@
 package gui;
 
+import application.Main;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import screen.MainMenu;
+import screen.PlayingScreen;
 import sharedObject.RenderableHolder;
 
 public class ControlPane extends VBox{
@@ -46,7 +51,16 @@ public class ControlPane extends VBox{
 	public void initializeStartButton() {
 		startButton = new Button("Start");
 		this.initializeButtonStyle(startButton);
-		//startButton.setOnMouseClicked(event -> Start() );
+		
+		startButton.setOnMouseClicked(event -> {
+			RenderableHolder.soundFX.get("ButtonClick").play();
+			
+			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			Scene scene = new Scene(new PlayingScreen());
+			RenderableHolder.bgMusic.get("MainMenuBGM").stop();
+			stage.setScene(scene);
+			stage.show();
+		} );
 	}
 	
 	public void initializeInstructionButton() {
