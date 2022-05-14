@@ -28,6 +28,8 @@ public class InstructionPane extends VBox {
 		this.setSpacing(120);
 		this.setPadding(new Insets(40));
 		this.setAlignment(Pos.TOP_CENTER);
+		this.setMinSize(500, 600);
+		this.setMaxSize(500, 600);
 		
 		BackgroundSize bgSize = new BackgroundSize(700,760,false,false,false,false);
 		this.setBackground(new Background(new BackgroundImage(RenderableHolder.background.get("OldPaper"),

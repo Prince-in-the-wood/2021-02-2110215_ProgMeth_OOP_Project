@@ -11,13 +11,13 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import sharedObject.RenderableHolder;
 
 
-public class MainMenu extends BorderPane{
+public class MainMenu extends HBox{
 	
 	private static ControlPane controlPane;
 	private static CreditPane creditPane;
@@ -37,13 +37,14 @@ public class MainMenu extends BorderPane{
 		
 		sidePane.getChildren().addAll( new ImageView( RenderableHolder.background.get("Logo") ), controlPane );
 		sidePane.setPadding(new Insets(75));
+		sidePane.setPrefSize(520, 760);
 		
-		windowPane.setAlignment(Pos.CENTER);
-		windowPane.setPrefSize(600, 760);
+		windowPane.setAlignment(Pos.CENTER_LEFT);
+		windowPane.setMinSize(500, 700);
+		windowPane.setMaxSize(500, 700);
 		windowPane.setPadding(new Insets(50));
 		
-		this.setLeft(windowPane);
-		this.setRight(sidePane);
+		this.getChildren().addAll(windowPane, sidePane);
 	
 		BackgroundSize bgSize = new BackgroundSize(1120,760,false,false,false,false);
 		this.setBackground(new Background(new BackgroundImage(RenderableHolder.background.get("MainMenu"),
