@@ -1,27 +1,22 @@
 package gui;
 
-import javafx.scene.layout.Pane;
+import entity.base.Emotion;
+import javafx.geometry.Pos;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+import sharedObject.RenderableHolder;
 
-public class CharacterPane extends Pane {
-	private final String normalFaceURL;
-	private final String worriedFaceURL;
-	private final String surprisedFaceURL;
-	
+public class CharacterPane extends StackPane {
+
 	public CharacterPane() {
-		this.normalFaceURL = "normalFace.png";
-		this.worriedFaceURL = "worriedFace.png";
-		this.surprisedFaceURL = "surprisedFace.png";
+		ImageView img = new ImageView(RenderableHolder.characterBody.get(Emotion.NORMAL));
+		img.setFitHeight(350);
+		img.setPreserveRatio(true);
+		
+		this.setAlignment(Pos.CENTER);
+		this.getChildren().add(img);
+		
+		//this.setPadding(new Insets(20));
 	}
 
-	public String getNormalFaceURL() {
-		return normalFaceURL;
-	}
-	
-	public String getWorriedFaceURL() {
-		return worriedFaceURL;
-	}
-	
-	public String getSurprisedFaceURL() {
-		return surprisedFaceURL;
-	}
 }
