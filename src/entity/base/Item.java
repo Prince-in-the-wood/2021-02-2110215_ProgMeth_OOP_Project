@@ -12,6 +12,10 @@ public abstract class Item implements IRenderable{
 	private int z;
 	public boolean isVisible;
 	
+	private final double width = 30;
+	private final double height = 30;
+	
+	
 	public Item(String name) {
 		setName(name);
 		setIsVisible(false);
@@ -57,7 +61,7 @@ public abstract class Item implements IRenderable{
 
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.drawImage(RenderableHolder.furnitureSprite.get(this.name) , xPosition, yPosition);
+		gc.drawImage(RenderableHolder.furnitureSprite.get(this.name) , xPosition, yPosition, width, height);
 	}
 
 }
