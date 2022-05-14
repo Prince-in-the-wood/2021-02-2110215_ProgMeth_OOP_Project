@@ -55,7 +55,7 @@ public class RenderableHolder {
 		characterBody.put(Emotion.SHOCK, new Image(ClassLoader.getSystemResource("Character_Shock.png").toString()));
 		
 		bgMusic.put("MainMenuBGM", new AudioClip(ClassLoader.getSystemResource("MemoriesBGM.mp3").toString()));
-		soundFX.put("ButtonClick", new AudioClip(ClassLoader.getSystemResource("ClickSFX.mp3").toString()));
+		soundFX.put("ButtonClick", new AudioClip(ClassLoader.getSystemResource("ClickSFX.wav").toString()));
 		
 		juiceICTFont = Font.loadFont( ClassLoader.getSystemResource("JUICE.ttf").toString(), 45 );
 		couriterryFont = Font.loadFont( ClassLoader.getSystemResource("AatrixCOURITER.ttf").toString(), 20 );
