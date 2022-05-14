@@ -52,19 +52,29 @@ public class ControlPane extends VBox{
 	public void initializeInstructionButton() {
 		instructionButton = new Button("Instruction");
 		this.initializeButtonStyle(instructionButton);
-		instructionButton.setOnMouseClicked(event -> showInstructionWindow() );
+		
+		instructionButton.setOnMouseClicked(event -> {
+			RenderableHolder.soundFX.get("ButtonClick").play();
+			showInstructionWindow();
+			});
 	}
 	
 	public void initializeCreditButton() {
 		creditButton = new Button("Credit");
 		this.initializeButtonStyle(creditButton);		
-		creditButton.setOnMouseClicked(event -> showCreditWindow() );
+		creditButton.setOnMouseClicked(event -> {
+			RenderableHolder.soundFX.get("ButtonClick").play();
+			showCreditWindow();
+		});
 	}
 	
 	public void initializeExitButton() {
 		exitButton = new Button("Exit");
 		this.initializeButtonStyle(exitButton);
-		exitButton.setOnMouseClicked(event -> System.exit(0) );
+		exitButton.setOnMouseClicked(event -> {
+			RenderableHolder.soundFX.get("ButtonClick").play();
+			System.exit(0);
+		});
 	}
 	
 	
