@@ -72,4 +72,11 @@ public class Cupboard extends Container implements Lockable, Openable{
 	}
 
 
+	@Override
+	public boolean isVisible() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
 }

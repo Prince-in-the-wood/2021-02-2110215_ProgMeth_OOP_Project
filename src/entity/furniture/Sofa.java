@@ -3,10 +3,11 @@ package entity.furniture;
 import java.util.ArrayList;
 
 import entity.base.Cuttable;
+import entity.base.Furniture;
 import entity.base.Container;
 import entity.base.Item;
 
-public class Sofa extends Container implements Cuttable{
+public class Sofa extends Furniture implements Cuttable{
 
 	private boolean isCut;
 	private boolean isSomethingBehind;
@@ -61,6 +62,14 @@ public class Sofa extends Container implements Cuttable{
 
 	public void setThingBehind(ArrayList<Item> thingBehind) {
 		this.thingBehind = thingBehind;
+	}
+
+
+
+	@Override
+	public boolean isVisible() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	

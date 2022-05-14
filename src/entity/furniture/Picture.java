@@ -37,6 +37,13 @@ public class Picture extends Furniture {
 		this.thingBehind = thingBehind;
 	}
 
+
+	@Override
+	public boolean isVisible() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 	
 	

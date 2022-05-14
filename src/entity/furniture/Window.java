@@ -40,5 +40,11 @@ public class Window extends Furniture implements Openable{
 		this.isOpened = isOpened;
 	}
 
+	@Override
+	public boolean isVisible() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 
 }

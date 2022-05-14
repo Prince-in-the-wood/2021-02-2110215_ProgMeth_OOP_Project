@@ -8,4 +8,10 @@ public class Bed extends Furniture{
 		super(name, xPosition, yPosition);
 	}
 
+	@Override
+	public boolean isVisible() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
