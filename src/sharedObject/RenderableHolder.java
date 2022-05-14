@@ -19,7 +19,7 @@ public class RenderableHolder {
 	private Comparator<IRenderable> comparator;
 	public static Map<String, Image> furnitureSprite = new HashMap<String, Image>();
 	public static Map<String, Image> itemSprite = new HashMap<String, Image>();
-	public static Map<Emotion, Image> characterFullBody = new HashMap<Emotion, Image>();
+	public static Map<Emotion, Image> characterBody = new HashMap<Emotion, Image>();
 	public static Map<String, Image> characterSprite = new HashMap<String, Image>();
 	public static Map<String, Image> background = new HashMap<String, Image>();
 	public static Map<String, AudioClip> soundFX = new HashMap<String, AudioClip>();
@@ -49,6 +49,10 @@ public class RenderableHolder {
 		background.put("Logo",new Image(ClassLoader.getSystemResource("Logo.png").toString()));
 		background.put("OldPaper",new Image(ClassLoader.getSystemResource("OldPaperBG.jpeg").toString()));
 		background.put("HowToPlay",new Image(ClassLoader.getSystemResource("HowToPlay.png").toString()));
+		
+		characterBody.put(Emotion.NORMAL, new Image(ClassLoader.getSystemResource("Character_Normal.png").toString()));
+		characterBody.put(Emotion.WORRIED, new Image(ClassLoader.getSystemResource("Character_Worried.png").toString()));
+		characterBody.put(Emotion.SHOCK, new Image(ClassLoader.getSystemResource("Character_Shock.png").toString()));
 		
 		bgMusic.put("MainMenuBGM", new AudioClip(ClassLoader.getSystemResource("MemoriesBGM.mp3").toString()));
 		soundFX.put("ButtonClick", new AudioClip(ClassLoader.getSystemResource("ClickSFX.mp3").toString()));
