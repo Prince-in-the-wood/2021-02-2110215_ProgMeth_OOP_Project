@@ -39,7 +39,7 @@ public class MainMenu extends BorderPane{
 		sidePane.setPadding(new Insets(75));
 		
 		windowPane.setAlignment(Pos.CENTER);
-		windowPane.setPrefSize(700, 760);
+		windowPane.setPrefSize(600, 760);
 		windowPane.setPadding(new Insets(50));
 		
 		this.setLeft(windowPane);
@@ -47,11 +47,11 @@ public class MainMenu extends BorderPane{
 	
 		BackgroundSize bgSize = new BackgroundSize(1120,760,false,false,false,false);
 		this.setBackground(new Background(new BackgroundImage(RenderableHolder.background.get("MainMenu"),
-		        						  null, null, BackgroundPosition.CENTER, bgSize)));
+		        						  null, null, null, bgSize)));
 		
 		this.setPadding(new Insets(10));
-		this.setPrefHeight(760);
-		this.setPrefWidth(1120);
+		this.setHeight(760);
+		this.setWidth(1120);
 		
 		RenderableHolder.bgMusic.get("MainMenuBGM").setCycleCount(INDEFINITE);
 		RenderableHolder.bgMusic.get("MainMenuBGM").play();

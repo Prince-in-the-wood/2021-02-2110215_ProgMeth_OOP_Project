@@ -25,7 +25,7 @@ public class CreditPane extends VBox {
 		initializeBodyText();
 		
 		this.setSpacing(150);
-		this.setPadding(new Insets(100));
+		this.setPadding(new Insets(50));
 		this.setAlignment(Pos.TOP_CENTER);
 		
 		BackgroundSize bgSize = new BackgroundSize(700,760,false,false,false,false);

@@ -26,7 +26,7 @@ public class InstructionPane extends VBox {
 		initializeHowToPlayPic();
 		
 		this.setSpacing(120);
-		this.setPadding(new Insets(100));
+		this.setPadding(new Insets(40));
 		this.setAlignment(Pos.TOP_CENTER);
 		
 		BackgroundSize bgSize = new BackgroundSize(700,760,false,false,false,false);
