@@ -67,7 +67,7 @@ public class Mirror extends Container implements Updateable {
 					}
 				}
 			}else {
-				DialoguePane.setGameText("It's just a.");
+				DialoguePane.setGameText("It's broken...");
 			}
 		}
 	}
