@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import entity.base.Direction;
 import entity.base.Emotion;
 import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
@@ -20,7 +21,7 @@ public class RenderableHolder {
 	public static Map<String, Image> furnitureSprite = new HashMap<String, Image>();
 	public static Map<String, Image> itemSprite = new HashMap<String, Image>();
 	public static Map<Emotion, Image> characterBody = new HashMap<Emotion, Image>();
-	public static Map<String, Image> characterSprite = new HashMap<String, Image>();
+	public static Map<Direction, Image> characterSprite = new HashMap<Direction, Image>();
 	public static Map<String, Image> background = new HashMap<String, Image>();
 	public static Map<String, AudioClip> soundFX = new HashMap<String, AudioClip>();
 	public static Map<String, AudioClip> bgMusic = new HashMap<String, AudioClip>();
