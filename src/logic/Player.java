@@ -90,6 +90,15 @@ public class Player {
 	}
 	
 	public static void move() {
+		
+		ArrayList<Furniture> furniture = GameController.getCurrentRoom().getFurniture();
+		
+		for( int i = 0 ; i < furniture.size() ; i++ ) {
+			if( isInfrontOf(furniture.get(i)) ) {
+				return;
+			}
+		}
+		
 		if( faceDirection == Direction.DOWN ) {
 			Player.setyPosition( yPosition + eachStep );
 		}
