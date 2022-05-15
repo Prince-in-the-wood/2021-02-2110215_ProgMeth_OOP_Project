@@ -44,6 +44,7 @@ public class MainMenu extends HBox{
 		windowPane.setMinSize(500, 700);
 		windowPane.setMaxSize(500, 700);
 		windowPane.setPadding(new Insets(50));
+		windowPane.getChildren().addAll(creditPane, instructionPane);
 		
 		this.getChildren().addAll(windowPane, sidePane);
 	
@@ -81,21 +82,21 @@ public class MainMenu extends HBox{
 	
 	public static void showCreditWindow() {
 
-		if( windowPane.getChildren().isEmpty() || !windowPane.getChildren().get(0).equals(creditPane)) {
-			windowPane.getChildren().clear();
-			windowPane.getChildren().add(creditPane);
+		if( !creditPane.isVisible() ) {
+			instructionPane.setVisible(false);
+			creditPane.setVisible(true);
 		}else {
-			windowPane.getChildren().clear();
+			creditPane.setVisible(false);
 		}
 	}
 	
 	public static void showInstructionWindow() {
 
-		if( windowPane.getChildren().isEmpty() || !windowPane.getChildren().get(0).equals(instructionPane)) {
-			windowPane.getChildren().clear();
-			windowPane.getChildren().add(instructionPane);
+		if( !instructionPane.isVisible()) {
+			creditPane.setVisible(false);
+			instructionPane.setVisible(true);
 		}else {
-			windowPane.getChildren().clear();
+			instructionPane.setVisible(false);
 		}
 	}
 }
