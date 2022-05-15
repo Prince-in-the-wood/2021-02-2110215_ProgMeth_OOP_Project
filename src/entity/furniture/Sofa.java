@@ -19,12 +19,10 @@ public class Sofa extends Furniture implements Cuttable{
 	private boolean isCut;
 	private boolean isSomethingBehind;
 	private ArrayList<Item> thingBehind;
-	private String imageString;
 	
 	public Sofa(String name, int xPosition, int yPosition, boolean isSomethingBehind) {
 		super(name, xPosition, yPosition);		
 		
-		setImageString(name);
 		setIsCut(false);	
 		setIsSomethingBehind(isSomethingBehind);
 	}
@@ -122,23 +120,6 @@ public class Sofa extends Furniture implements Cuttable{
 
 	public void setThingBehind(ArrayList<Item> thingBehind) {
 		this.thingBehind = thingBehind;
-	}
-
-
-
-	public String getImageString() {
-		return imageString;
-	}
-
-
-
-	public void setImageString(String imageString) {
-		this.imageString = imageString;
-	}
-	
-	@Override
-	public void draw(GraphicsContext gc) {
-		gc.drawImage(RenderableHolder.furnitureSprite.get(this.imageString) , this.getxPosition(), this.getyPosition());
 	}
 	
 }

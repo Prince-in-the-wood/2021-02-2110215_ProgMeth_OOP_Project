@@ -10,12 +10,10 @@ import sharedObject.RenderableHolder;
 public class Window extends Furniture implements Openable{
 
 	private boolean isOpened;
-	private String imageString;
 
 	public Window(String name, int xPosition, int yPosition) {
 		super(name, xPosition, yPosition);
 		setIsOpened(false);
-		setImageString(name);
 	}
 
 	@Override
@@ -49,20 +47,6 @@ public class Window extends Furniture implements Openable{
 
 	public void setIsOpened(boolean isOpened) {
 		this.isOpened = isOpened;
-	}
-
-	public String getImageString() {
-		return imageString;
-	}
-
-	public void setImageString(String imageString) {
-		this.imageString = imageString;
-	}
-	
-	@Override
-	public void draw(GraphicsContext gc) {
-		gc.drawImage(RenderableHolder.furnitureSprite.get(this.getImageString()), this.getxPosition(), this.getyPosition());
-	}
-	
+	}	
 
 }

@@ -20,13 +20,11 @@ public class Cupboard extends Container implements Lockable, Openable{
 	private boolean isLocked;
 	private boolean isOpened;
 	private ArrayList<Item> item;
-	private String imageString;
 	
 	public Cupboard(String name, int xPosition, int yPosition, String text) {
 		super(name, xPosition, yPosition);
 		
 		item  = new ArrayList<Item>();
-		imageString = name;
 		setIsLocked(true);
 		setIsOpened(false);
 	}
@@ -125,22 +123,6 @@ public class Cupboard extends Container implements Lockable, Openable{
 	public void setItem(ArrayList<Item> item) {
 		this.item = item;
 	}
-
-
-	public String getImageString() {
-		return imageString;
-	}
-
-
-	public void setImageString(String imageString) {
-		this.imageString = imageString;
-	}
-	
-	@Override
-	public void draw(GraphicsContext gc) {
-		gc.drawImage(RenderableHolder.furnitureSprite.get(this.imageString) , this.getxPosition(), this.getyPosition());
-	}
-	
 	
 	
 

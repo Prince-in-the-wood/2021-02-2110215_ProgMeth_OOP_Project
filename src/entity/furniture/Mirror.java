@@ -17,12 +17,10 @@ import entity.base.Item;
 public class Mirror extends Container implements Updateable {
 
 	private boolean isUpdated;
-	private String imageString;
 	
 	public Mirror(String name, int xPosition, int yPosition) {
 		super(name, xPosition, yPosition);
 		
-		setImageString(name);
 		setIsUpdated(false);
 	}
 
@@ -79,23 +77,7 @@ public class Mirror extends Container implements Updateable {
 
 	public void setIsUpdated(boolean isUpdated) {
 		this.isUpdated = isUpdated;
-	}
-
-	public String getImageString() {
-		return imageString;
-	}
-
-
-	public void setImageString(String imageString) {
-		this.imageString = imageString;
-	}
-	
-	@Override
-	public void draw(GraphicsContext gc) {
-		gc.drawImage(RenderableHolder.furnitureSprite.get(this.imageString) , this.getxPosition(), this.getyPosition());
-	}
-	
-	
+	}	
 	
 	
 }

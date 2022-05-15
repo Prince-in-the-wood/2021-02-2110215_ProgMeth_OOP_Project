@@ -8,7 +8,6 @@ import entity.base.Furniture;
 public class TableWithLamp extends Furniture implements Updateable{
 	
 	private boolean isUpdated;
-	private String imageString;
 
 	public TableWithLamp(String name, int xPosition, int yPosition) {
 		
@@ -43,20 +42,6 @@ public class TableWithLamp extends Furniture implements Updateable{
 	public void setIsUpdated(boolean isUpdated) {
 		this.isUpdated = isUpdated;
 	}
-
-	public String getImageString() {
-		return imageString;
-	}
-
-	public void setImageString(String imageString) {
-		this.imageString = imageString;
-	}
-	
-	@Override
-	public void draw(GraphicsContext gc) {
-		gc.drawImage(RenderableHolder.furnitureSprite.get(this.getImageString()), this.getxPosition(), this.getyPosition());
-	}
-
 	
 	
 }
