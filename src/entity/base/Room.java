@@ -2,9 +2,15 @@ package entity.base;
 
 import java.util.ArrayList;
 
-import javafx.scene.layout.StackPane;
+import input.InputUtility;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.paint.Color;
+import sharedObject.IRenderable;
+import sharedObject.RenderableHolder;
 
-public abstract class Room extends StackPane{
+public abstract class Room extends Canvas{
 	
 	private String name;
 	private String startText;
@@ -17,14 +23,37 @@ public abstract class Room extends StackPane{
 	private double floorStartY;
 	
 	
-	public Room(String name, String startText, String endText) {
-		setName(name);
-		setStartText(startText);
-		setEndText(endText);
+	public Room() {
+		
 		setStart(false);
 		setEnd(false);
 		
 	}
+	
+
+	public void addListerner() {
+		this.setOnKeyPressed((KeyEvent event) -> {
+			InputUtility.setKeyPressed(event.getCode(), true);
+		});
+
+		this.setOnKeyReleased((KeyEvent event) -> {
+			InputUtility.setKeyPressed(event.getCode(), false);
+		});
+
+	}
+
+	public void paintComponent() {
+		GraphicsContext gc = this.getGraphicsContext2D();
+		gc.setFill(Color.BLACK);
+		for (IRenderable entity : RenderableHolder.getInstance().getEntities()) {
+			if (entity.isVisible() ) {
+				entity.draw(gc);
+			}
+		}
+
+
+	}
+
 	
 
 	// method
