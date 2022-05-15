@@ -30,7 +30,7 @@ public class Mirror extends Container implements Updateable {
 	@Override
 	public void update() {
 		
-		ArrayList<Item> item = super.getItem();
+		ArrayList<Item> item = this.getItem();
 		
 		setImageString("BehindMirror");
 		
@@ -47,7 +47,7 @@ public class Mirror extends Container implements Updateable {
 			this.update();
 		}else{ 
 			
-			ArrayList<Item> item = super.getItem();
+			ArrayList<Item> item = this.getItem();
 			
 			if( item.size() > 0 ) 
 			{
@@ -92,7 +92,7 @@ public class Mirror extends Container implements Updateable {
 	
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.drawImage(RenderableHolder.furnitureSprite.get(this.imageString) , super.getxPosition(), super.getyPosition());
+		gc.drawImage(RenderableHolder.furnitureSprite.get(this.imageString) , this.getxPosition(), this.getyPosition());
 	}
 	
 	

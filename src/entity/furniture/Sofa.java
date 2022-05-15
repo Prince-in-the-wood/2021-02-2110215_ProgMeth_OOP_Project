@@ -138,7 +138,7 @@ public class Sofa extends Furniture implements Cuttable{
 	
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.drawImage(RenderableHolder.furnitureSprite.get(this.imageString) , super.getxPosition(), super.getyPosition());
+		gc.drawImage(RenderableHolder.furnitureSprite.get(this.imageString) , this.getxPosition(), this.getyPosition());
 	}
 	
 }

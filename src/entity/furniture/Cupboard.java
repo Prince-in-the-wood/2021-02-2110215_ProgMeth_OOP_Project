@@ -45,7 +45,7 @@ public class Cupboard extends Container implements Lockable, Openable{
 	@Override
 	public void close() {
 		this.setIsOpened(false);
-		this.setImageString(super.getName());
+		this.setImageString(this.getName());
 	}
 
 	@Override
@@ -138,7 +138,7 @@ public class Cupboard extends Container implements Lockable, Openable{
 	
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.drawImage(RenderableHolder.furnitureSprite.get(this.imageString) , super.getxPosition(), super.getyPosition());
+		gc.drawImage(RenderableHolder.furnitureSprite.get(this.imageString) , this.getxPosition(), this.getyPosition());
 	}
 	
 	
