@@ -2,15 +2,20 @@ package entity.base;
 
 import java.util.ArrayList;
 
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 
-public abstract class Room extends GridPane{
+public abstract class Room extends StackPane{
+	
 	private String name;
 	private String startText;
 	private String endText;
 	private ArrayList<Furniture> furniture;
 	private boolean isStart;
 	private boolean isEnd;
+	
+	private double floorStartX;
+	private double floorStartY;
+	
 	
 	public Room(String name, String startText, String endText) {
 		setName(name);
@@ -81,5 +86,26 @@ public abstract class Room extends GridPane{
 	public void setEnd(boolean isEnd) {
 		this.isEnd = isEnd;
 	}
+
+
+	public double getFloorStartX() {
+		return floorStartX;
+	}
+
+
+	public void setFloorStartX(double floorStartX) {
+		this.floorStartX = floorStartX;
+	}
+
+
+	public double getFloorStartY() {
+		return floorStartY;
+	}
+
+
+	public void setFloorStartY(double floorStartY) {
+		this.floorStartY = floorStartY;
+	}
+
 
 }
