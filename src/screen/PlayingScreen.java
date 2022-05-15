@@ -6,6 +6,8 @@ import gui.DialoguePane;
 import gui.ItemInHandBox;
 import gui.TimerPane;
 import gui.room.Bedroom;
+import input.InputUtility;
+import javafx.animation.AnimationTimer;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -23,16 +25,19 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import logic.GameController;
+import logic.Player;
 import sharedObject.RenderableHolder;
 
 public class PlayingScreen extends VBox{
 
-	private Button menuButton;
-	private CharacterPane character;
-	private DialoguePane dialoguePane;
-	private ItemInHandBox itemInHandBox;
-	private TimerPane timerPane;
-	private Pane room;
+	private static Button menuButton;
+	private static CharacterPane character;
+	private static DialoguePane dialoguePane;
+	private static ItemInHandBox itemInHandBox;
+	private static TimerPane timerPane;
+	private static Pane room;
+	private static AnimationTimer animation;
 	
 	public PlayingScreen() {
 		
@@ -62,6 +67,13 @@ public class PlayingScreen extends VBox{
 		this.setHeight(760);
 		this.setWidth(1120);
 		
+		animation = new AnimationTimer() {
+			public void handle(long now) {
+				GameController.getCurrentRoom().paintComponent();
+				Player.logicUpdate();
+			}
+		};
+		animation.start();
 	}
 	
 	public void initializeMenuButton() {
@@ -118,5 +130,14 @@ public class PlayingScreen extends VBox{
 		return sidePane;
 		
 	}
+
+	public static TimerPane getTimerPane() {
+		return timerPane;
+	}
+
+	public static AnimationTimer getAnimation() {
+		return animation;
+	}
+	
 
 }
