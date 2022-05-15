@@ -1,41 +1,53 @@
 package entity.furniture;
 
-import java.util.ArrayList;
-
 import entity.base.Furniture;
-import entity.base.Item;
+import gui.DialoguePane;
+import javafx.scene.canvas.GraphicsContext;
+import sharedObject.RenderableHolder;
 
 public class Picture extends Furniture {
+
+	private String description;
+	private String imageString;
 	
-	private boolean isSomethingBehind;
-	private ArrayList<Item> thingBehind;
-	
-	public Picture(String name, int xPosition, int yPosition, boolean isSomethingBehind) {
+	public Picture(String name, int xPosition, int yPosition, String description) {
 		super(name, xPosition, yPosition);
-		setIsSomethingBehind(isSomethingBehind);
-		thingBehind = new ArrayList<Item>();
+		setImageString(name);
+		setDescription(description);
 	}
 	
 	
-	//getter and setter
+	public String getImageString() {
+		return imageString;
+	}
+
+
+	public void setImageString(String imageString) {
+		this.imageString = imageString;
+	}
+
+
+	public String getDescription() {
+		return description;
+	}
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+	@Override
+	public void observe() {
+		DialoguePane.setGameText(this.getDescription());
+	}
 	
-	public boolean isSomethingBehind() {
-		return isSomethingBehind;
-	}
-
-	public void setIsSomethingBehind(boolean isSomethingBehind) {
-		this.isSomethingBehind = isSomethingBehind;
+	@Override
+	public void draw(GraphicsContext gc) {
+		gc.drawImage(RenderableHolder.furnitureSprite.get(this.imageString) , super.getxPosition(), super.getyPosition());
 	}
 
 
-	public ArrayList<Item> getThingBehind() {
-		return thingBehind;
-	}
-
-
-	public void setThingBehind(ArrayList<Item> thingBehind) {
-		this.thingBehind = thingBehind;
-	}
 	
 
 }
