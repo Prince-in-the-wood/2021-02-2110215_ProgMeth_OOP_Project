@@ -12,11 +12,13 @@ public abstract class Furniture implements IRenderable{
 	private double yPosition;
 	private int z;
 	private boolean isVisible;
+	private String imageString;
 	
 	public Furniture(String name, int xPosition, int yPosition) {
 		setName(name);
 		setxPosition(xPosition);
 		setyPosition(yPosition);
+		setImageString(name);
 	}
 
 	
@@ -60,6 +62,18 @@ public abstract class Furniture implements IRenderable{
 		this.isVisible = isVisible;
 	}
 	
+	
+	
+	public String getImageString() {
+		return imageString;
+	}
+
+
+	public void setImageString(String imageString) {
+		this.imageString = imageString;
+	}
+
+
 	@Override
 	public String toString() {
 		return "This is a normal " + this.name;
@@ -72,7 +86,7 @@ public abstract class Furniture implements IRenderable{
 
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.drawImage(RenderableHolder.furnitureSprite.get(this.name) , xPosition, yPosition);
+		gc.drawImage(RenderableHolder.furnitureSprite.get(imageString) , xPosition, yPosition);
 	}
 
 
