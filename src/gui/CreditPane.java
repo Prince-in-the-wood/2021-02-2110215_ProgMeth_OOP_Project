@@ -30,6 +30,8 @@ public class CreditPane extends VBox {
 		this.setMinSize(500, 600);
 		this.setMaxSize(500, 600);
 		
+		this.setVisible(false);
+		
 		BackgroundSize bgSize = new BackgroundSize(700,760,false,false,false,false);
 		this.setBackground(new Background(new BackgroundImage(RenderableHolder.background.get("OldPaper"),
 		        						  null, null, BackgroundPosition.CENTER, bgSize)));
