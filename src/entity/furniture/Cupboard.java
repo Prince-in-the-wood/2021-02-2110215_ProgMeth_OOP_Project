@@ -38,7 +38,7 @@ public class Cupboard extends Container implements Lockable, Openable{
 			DialoguePane.setGameText("It's locked");
 		}else {
 			this.setIsOpened(true);
-			this.setImageString("OpenedCupBoard");
+			this.setImageString("OpenedCupboard");
 		}
 	}
 	
