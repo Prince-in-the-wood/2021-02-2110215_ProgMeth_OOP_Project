@@ -2,11 +2,13 @@ package entity.base;
 
 import java.util.ArrayList;
 
+import gui.DialoguePane;
 import input.InputUtility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import logic.Player;
 import sharedObject.IRenderable;
 import sharedObject.RenderableHolder;
 
@@ -16,7 +18,6 @@ public abstract class Room extends Canvas{
 	private String startText;
 	private String endText;
 	private ArrayList<Furniture> furniture;
-	private boolean isStart;
 	private boolean isEnd;
 	
 	private double floorStartX;
@@ -24,8 +25,7 @@ public abstract class Room extends Canvas{
 	
 	
 	public Room() {
-		
-		setStart(false);
+
 		setEnd(false);
 		
 	}
@@ -44,13 +44,28 @@ public abstract class Room extends Canvas{
 
 	public void paintComponent() {
 		GraphicsContext gc = this.getGraphicsContext2D();
-		gc.setFill(Color.BLACK);
+		
+		boolean isCharacterDraw = false;
+		
 		for (IRenderable entity : RenderableHolder.getInstance().getEntities()) {
-			if (entity.isVisible() ) {
+			
+			if( !isCharacterDraw ) {
+				if( entity instanceof Furniture && ((Furniture)entity).getyPosition() > Player.getyPosition()) {
+					Player.draw(gc);
+					isCharacterDraw = true;
+				}else if( entity instanceof Item && ((Item)entity).getyPosition() > Player.getyPosition()) {
+					Player.draw(gc);
+					isCharacterDraw = true;
+				}
+			}
+			
+			if ( entity.isVisible() ) {
 				entity.draw(gc);
 			}
 		}
-
+		
+		if( !isCharacterDraw )
+			Player.draw(gc);
 
 	}
 
@@ -58,11 +73,11 @@ public abstract class Room extends Canvas{
 
 	// method
 	public void start() {
-		// start method
+		DialoguePane.setGameText(startText);
 	}
 	
 	public void end() {
-		// end method
+		DialoguePane.setGameText(endText);
 	}
 	
 
@@ -100,14 +115,6 @@ public abstract class Room extends Canvas{
 		this.furniture = furniture;
 	}
 	
-	public boolean isStart() {
-		return isStart;
-	}
-
-	public void setStart(boolean isStart) {
-		this.isStart = isStart;
-	}
-
 	public boolean isEnd() {
 		return isEnd;
 	}
