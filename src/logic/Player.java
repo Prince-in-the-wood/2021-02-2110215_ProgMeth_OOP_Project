@@ -6,8 +6,10 @@ import entity.base.Direction;
 import entity.base.Emotion;
 import entity.base.Furniture;
 import entity.base.Item;
+import input.InputUtility;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
 import sharedObject.RenderableHolder;
 
 public class Player {
@@ -185,6 +187,36 @@ public class Player {
 	
 	public void draw(GraphicsContext gc) {
 		gc.drawImage(RenderableHolder.characterSprite.get(faceDirection) , xPosition, yPosition);
+	}
+
+	public static void logicUpdate() {
+		if (InputUtility.getKeyPressed(KeyCode.A)) {
+			setFaceDirection(Direction.LEFT);
+			move();
+		}
+		
+		if (InputUtility.getKeyPressed(KeyCode.D)) {
+			setFaceDirection(Direction.RIGHT);
+			move();
+		}
+		
+		if (InputUtility.getKeyPressed(KeyCode.W)) {
+			setFaceDirection(Direction.UP);
+			move();
+		}
+		
+		if (InputUtility.getKeyPressed(KeyCode.S)) {
+			setFaceDirection(Direction.DOWN);
+			move();
+		}
+		
+		if (InputUtility.getKeyPressed(KeyCode.K)) {
+			observe();
+		}
+		
+		if (InputUtility.getKeyPressed(KeyCode.L)) {
+			useItem();
+		}
 	}
 	
 	
