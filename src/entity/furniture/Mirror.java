@@ -1,34 +1,101 @@
 package entity.furniture;
 
 import entity.base.Updateable;
+import entity.item.Key;
+import entity.item.Note;
+import entity.item.PocketKnife;
+import gui.DialoguePane;
+import javafx.scene.canvas.GraphicsContext;
+import sharedObject.RenderableHolder;
+
+import java.util.ArrayList;
+
 import entity.base.Container;
+import entity.base.Item;
 
 
 public class Mirror extends Container implements Updateable {
 
 	private boolean isUpdated;
+	private String imageString;
 	
 	public Mirror(String name, int xPosition, int yPosition) {
 		super(name, xPosition, yPosition);
+		
+		setImageString(name);
 		setIsUpdated(false);
 	}
 
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
 		
+		ArrayList<Item> item = super.getItem();
+		
+		setImageString("BehindMirror");
+		
+		for( int i = item.size() - 1 ; i >= 0 ; i++ ) {
+			item.get(i).setIsVisible(true);
+		}
+		
+		setIsUpdated(true);
+		
+	}
+	
+	public void observe() {
+		if( !this.isUpdated() ) {
+			this.update();
+		}else{ 
+			
+			ArrayList<Item> item = super.getItem();
+			
+			if( item.size() > 0 ) 
+			{
+				for( int i = item.size() - 1 ; i >= 0 ; i++ ) {
+					if( item.get(i) instanceof Note ) {
+						((Note)item.get(i)).read();
+					}
+					
+					if( item.get(i) instanceof PocketKnife ) {
+						((PocketKnife)item.get(i)).pick();
+						item.remove(i);
+					}
+					
+					if( item.get(i) instanceof Key ) {
+						((Key)item.get(i)).pick();
+						item.remove(i);
+					}
+				}
+			}else {
+				DialoguePane.setGameText("It's just a.");
+			}
+		}
 	}
 
 	@Override
 	public boolean isUpdated() {
-		// TODO Auto-generated method stub
 		return isUpdated;
 	}
-
 
 	public void setIsUpdated(boolean isUpdated) {
 		this.isUpdated = isUpdated;
 	}
+
+	public String getImageString() {
+		return imageString;
+	}
+
+
+	public void setImageString(String imageString) {
+		this.imageString = imageString;
+	}
+	
+	@Override
+	public void draw(GraphicsContext gc) {
+		gc.drawImage(RenderableHolder.furnitureSprite.get(this.imageString) , super.getxPosition(), super.getyPosition());
+	}
+	
+	
+	
 	
 }
