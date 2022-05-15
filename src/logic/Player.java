@@ -185,7 +185,7 @@ public class Player {
 		Player.faceDirection = faceDirection;
 	}
 	
-	public void draw(GraphicsContext gc) {
+	public static void draw(GraphicsContext gc) {
 		gc.drawImage(RenderableHolder.characterSprite.get(faceDirection) , xPosition, yPosition);
 	}
 
