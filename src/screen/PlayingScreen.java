@@ -42,10 +42,11 @@ public class PlayingScreen extends VBox{
 	
 	public PlayingScreen() {
 		
-		VBox sidePane = initializeSidePane();
-		
 		GameController.startGame();
 		
+		VBox sidePane = initializeSidePane();
+		
+	
 		initializeRoomPane();
 		
 		dialoguePane = new DialoguePane();
