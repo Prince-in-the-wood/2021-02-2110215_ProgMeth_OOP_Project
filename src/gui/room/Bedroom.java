@@ -17,17 +17,17 @@ public class Bedroom extends Room{
 				+ "Me…? Wait… I… Who am I?\n"
 				, "Where will the corridor lead?");
 
+		Door door = new Door("Door", 680, 420, -1);
 		
-
 		Cupboard cupboard = new Cupboard("Cupboard", 80 ,40, 1 );
-		Note note = new Note("Note1", 100, 180, 2,
+		Note noteWithDoll = new Note("Note1", 100, 180, 2,
 							"Yeah, you found Melody!\n"
 							+ "I’m glad to invite you to visit my new room!\n"
 							+ "It is bigger than the old one.\n"
 							+ "Is it great, right?”");
-		note.setImageString("Melody");
-		Key doorKey = new Key("Key", 120, 200, 3, null); // It's should be door instead
-		cupboard.getItem().add(note);
+		noteWithDoll.setImageString("Melody");
+		Key doorKey = new Key("Key", 120, 200, 3, door); // It's should be door instead
+		cupboard.getItem().add(noteWithDoll);
 		cupboard.getItem().add(doorKey);
 		
 		Window window = new Window("Window", 540, 40 , 4 );
@@ -46,7 +46,7 @@ public class Bedroom extends Room{
 		tableWithNote.getItem().add(note2);
 		tableWithNote.getItem().add(cupboardKey);
 		
-		
+		this.getFurniture().add(door);
 		this.getFurniture().add( cupboard );
 		this.getFurniture().add( window );
 		this.getFurniture().add( bed );
@@ -59,7 +59,7 @@ public class Bedroom extends Room{
 			RenderableHolder.getInstance().add(furniture);
 		}
 		
-		RenderableHolder.getInstance().add(note);
+		RenderableHolder.getInstance().add(noteWithDoll);
 		RenderableHolder.getInstance().add(doorKey);
 		RenderableHolder.getInstance().add(note2);
 		RenderableHolder.getInstance().add(cupboardKey);
