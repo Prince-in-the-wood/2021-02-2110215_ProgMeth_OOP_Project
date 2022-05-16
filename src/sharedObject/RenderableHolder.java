@@ -46,6 +46,13 @@ public class RenderableHolder {
 	}
 
 	public static void loadResource() {
+		
+		loadMainMenuResource();
+		loadBedroomResource();
+	}
+	
+	private static void loadMainMenuResource() {
+	
 		background.put("MainMenu",new Image(ClassLoader.getSystemResource("MainMenu.png").toString()));
 		background.put("Logo",new Image(ClassLoader.getSystemResource("Logo.png").toString()));
 		background.put("OldPaper",new Image(ClassLoader.getSystemResource("OldPaperBG.jpeg").toString()));
@@ -60,6 +67,21 @@ public class RenderableHolder {
 		
 		juiceICTFont = Font.loadFont( ClassLoader.getSystemResource("JUICE.ttf").toString(), 45 );
 		couriterryFont = Font.loadFont( ClassLoader.getSystemResource("AatrixCOURITER.ttf").toString(), 20 );
+	
+	}
+	
+	private static void loadBedroomResource() {
+		background.put("Bedroom",new Image(ClassLoader.getSystemResource("bedroom/BedroomBG.png").toString()));
+		
+		furnitureSprite.put("Bed",new Image(ClassLoader.getSystemResource("bedroom/Bed.png").toString()));
+		furnitureSprite.put("TableWithLamp",new Image(ClassLoader.getSystemResource("bedroom/TableWithLamp.png").toString()));
+		furnitureSprite.put("TableWithOpenedLamp",new Image(ClassLoader.getSystemResource("bedroom/TableWithOpenedLamp.png").toString()));
+		furnitureSprite.put("TableWithNote",new Image(ClassLoader.getSystemResource("bedroom/TableWithNote.png").toString()));
+		furnitureSprite.put("Window",new Image(ClassLoader.getSystemResource("bedroom/Window.png").toString()));
+		furnitureSprite.put("OpenedWindow",new Image(ClassLoader.getSystemResource("bedroom/OpenedWindow.png").toString()));
+		furnitureSprite.put("Cupboard",new Image(ClassLoader.getSystemResource("bedroom/Cupboard.png").toString()));
+		furnitureSprite.put("OpenedCupboard",new Image(ClassLoader.getSystemResource("bedroom/OpenedCupboard.png").toString()));
+		furnitureSprite.put("Chair",new Image(ClassLoader.getSystemResource("bedroom/Chair.png").toString()));
 	}
 
 	public void add(IRenderable entity) {
