@@ -12,8 +12,8 @@ public class PocketKnife extends Item implements Pickable{
 	private boolean isPicked;
 	private Furniture matchedFurniture;
 	
-	public PocketKnife(String name, Furniture matchedFurniture) {
-		super(name);
+	public PocketKnife(String name, double xPosition, double yPosition, int z, Furniture matchedFurniture) {
+		super(name, xPosition, yPosition, z);
 		
 		setMatchedFurniture(matchedFurniture);
 		setIsPicked(false);

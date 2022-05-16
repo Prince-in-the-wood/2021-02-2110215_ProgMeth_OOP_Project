@@ -12,13 +12,17 @@ public abstract class Item implements IRenderable{
 	private int z;
 	public boolean isVisible;
 	
-	private final double width = 30;
-	private final double height = 30;
+	protected final double width = 20;
+	protected final double height = 20;
 	
 	
-	public Item(String name) {
+	public Item(String name, double xPosition, double yPosition, int z ) {
 		setName(name);
+		setxPosition(xPosition);
+		setyPosition(yPosition);
 		setIsVisible(false);
+		
+		this.z = z;
 	}
 
 	// getter and setter

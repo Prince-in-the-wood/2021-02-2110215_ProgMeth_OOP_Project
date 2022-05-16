@@ -12,8 +12,8 @@ public class Key extends Item implements Pickable{
 	private boolean isPicked;
 	private Furniture matchedFurniture;
 	
-	public Key(String name) {
-		super(name);
+	public Key(String name, double xPosition, double yPosition, int z, Furniture matchedFurniture) {
+		super(name, xPosition, yPosition, z);
 		
 		setMatchedFurniture(matchedFurniture);
 		setIsPicked(false);
