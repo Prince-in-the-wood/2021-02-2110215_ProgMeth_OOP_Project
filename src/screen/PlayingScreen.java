@@ -73,7 +73,7 @@ public class PlayingScreen extends VBox{
 		animation = new AnimationTimer() {
 			public void handle(long now) {
 				GameController.getCurrentRoom().paintComponent();
-				Player.logicUpdate();
+				GameController.logicUpdate();
 			}
 		};
 		animation.start();
@@ -160,6 +160,11 @@ public class PlayingScreen extends VBox{
 	
 	public static TimerPane getTimerPane() {
 		return timerPane;
+	}
+	
+	public static void setRoomPane(Room currentRoom) {
+		room.getChildren().clear();
+		room.getChildren().add(currentRoom);
 	}
 
 	public static AnimationTimer getAnimation() {
