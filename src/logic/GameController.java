@@ -19,6 +19,7 @@ public class GameController {
 	
 	public static void startGame(){
 		Player.initializePlayer();
+		RenderableHolder.getInstance().getEntities().clear();
 		currentRoom = new Bedroom();
 		timer = new Timer(5, 0, 0);
 	}
@@ -57,6 +58,9 @@ public class GameController {
 	}
 	
 	public static void setCurrentRoom() {
+
+		RenderableHolder.getInstance().getEntities().clear();
+		
 		if( currentRoom instanceof Bedroom )
 			currentRoom = new LivingRoom();
 		else if( currentRoom instanceof LivingRoom )

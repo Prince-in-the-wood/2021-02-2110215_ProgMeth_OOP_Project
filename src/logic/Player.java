@@ -6,6 +6,7 @@ import entity.base.Direction;
 import entity.base.Emotion;
 import entity.base.Furniture;
 import entity.base.Item;
+import gui.ItemInHandBox;
 import input.InputUtility;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -23,6 +24,7 @@ public class Player {
 	
 	public static void initializePlayer() {
 		itemInHand = null;
+		ItemInHandBox.deleteImageInBox();
 		playerEmotion = Emotion.WORRIED;		
 		xPosition = 260;
 		yPosition = 260;
