@@ -3,6 +3,7 @@ package entity.base;
 
 import gui.DialoguePane;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import sharedObject.IRenderable;
 import sharedObject.RenderableHolder;
 
@@ -14,12 +15,27 @@ public abstract class Furniture implements IRenderable{
 	private boolean isVisible;
 	private String imageString;
 	
+	private double[][] areaForInteract;
+	
 	public Furniture(String name, int xPosition, int yPosition, int z) {
 		setName(name);
 		setxPosition(xPosition);
 		setyPosition(yPosition);
 		setImageString(name);
 		setIsVisible(true);
+		
+		areaForInteract = new double[2][2]; //[[x1,y1],[x2,y2]];
+		areaForInteract[0][0] = xPosition;
+		areaForInteract[0][1] = yPosition;
+		
+		if( !imageString.equals("Door") ) {
+			Image img = RenderableHolder.furnitureSprite.get(imageString);
+			areaForInteract[1][0] = xPosition + img.getWidth();
+			areaForInteract[1][1] = yPosition + img.getHeight();
+		}else {
+			areaForInteract[1][0] = xPosition + 40;
+			areaForInteract[1][1] = yPosition + 40;
+		}
 		
 		this.z = z;
 	}
@@ -74,6 +90,13 @@ public abstract class Furniture implements IRenderable{
 		this.imageString = imageString;
 	}
 
+	public double[][] getAreaForInteract() {
+		return areaForInteract;
+	}
+
+	public void setAreaForInteract(double[][] areaForInteract) {
+		this.areaForInteract = areaForInteract;
+	}
 
 	@Override
 	public String toString() {
