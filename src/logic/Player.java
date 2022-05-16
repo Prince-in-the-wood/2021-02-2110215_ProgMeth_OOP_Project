@@ -15,7 +15,7 @@ import sharedObject.RenderableHolder;
 public class Player {
 
 	private static Item itemInHand;
-	private static Emotion playEmotion;
+	private static Emotion playerEmotion;
 	private static double xPosition;
 	private static double yPosition;
 	private static Direction faceDirection;
@@ -23,7 +23,7 @@ public class Player {
 	
 	public static void initializePlayer() {
 		itemInHand = null;
-		playEmotion = Emotion.WORRIED;		
+		playerEmotion = Emotion.WORRIED;		
 		xPosition = 260;
 		yPosition = 260;
 		faceDirection = Direction.DOWN;
@@ -49,7 +49,7 @@ public class Player {
 		for( int i = 0 ; i < furniture.size() ; i++ ) {
 			
 			if( isInfrontOf(furniture.get(i)) ) {
-				furniture.get(i).useItem();
+				furniture.get(i).observe();
 			}
 		
 		}
@@ -71,21 +71,28 @@ public class Player {
 		Image image = RenderableHolder.furnitureSprite.get(furniture.getImageString());
 		double endFX = startFX + image.getWidth();
 		double endFY = startFY + image.getHeight();
+			
+		if ( startCY > endFY || endCY < startFY ) {
+			return false;
+		}
+	    if ( endCX < startFX || startCX > endFX ) {
+	        return false;
+	    }
 		
 		if( faceDirection == Direction.DOWN ) {
-			return ( ( startFX <= endCX || startCX <= endFX ) && endCY == startFY);
+			return endCY == startFY;
 		}
 		
 		if( faceDirection == Direction.UP ) {
-			return ( ( startFX <= endCX || startCX <= endFX ) && startCY == endFY ); 
+			return startCY == endFY; 
 		}
 		
 		if( faceDirection == Direction.LEFT) {
-			return ( ( startFY <= endCY || startCY <= endFY ) && endCX == endFX );
+			return endCX == endFX;
 		}
 		
 		if( faceDirection == Direction.RIGHT) {
-			return ( ( startFY <= endCY || startCY <= endFY ) && endCX == startFX );
+			return endCX == startFX;
 		}
 		
 		return false;
@@ -94,50 +101,87 @@ public class Player {
 	
 	public static void move() {
 		
+		double startCX = xPosition;
+		double startCY = yPosition;
+		
+		if( faceDirection == Direction.DOWN ) {
+			startCY += eachStep;
+		}
+			
+		if( faceDirection == Direction.UP ) {
+			startCY -= eachStep;
+		}	
+		
+		if( faceDirection == Direction.LEFT ) {
+			startCX -= eachStep;
+		}
+		
+		if( faceDirection == Direction.RIGHT ) {
+			startCX += eachStep;
+		}
+		
+		Image character = RenderableHolder.characterSprite.get(faceDirection);		
+		double endCX = startCX + character.getWidth();
+		double endCY = startCY + character.getHeight();
+		
+		
 		ArrayList<Furniture> furniture = GameController.getCurrentRoom().getFurniture();
 		
 		for( int i = 0 ; i < furniture.size() ; i++ ) {
-			if( isInfrontOf(furniture.get(i)) ) {
-				System.out.println("Ouch" + furniture.get(i).toString());
-				return;
+			
+			double startFX = furniture.get(i).getxPosition();
+			double startFY = furniture.get(i).getyPosition();
+			
+			Image image = RenderableHolder.furnitureSprite.get(furniture.get(i).getImageString());
+			double endFX = startFX + image.getWidth();
+			double endFY = startFY + image.getHeight();
+			
+			if ( startCY >= endFY || endCY <= startFY ) {
+				continue;
+			}
+		    if ( endCX <= startFX || startCX >= endFX ) {
+		        continue;
+		    }
+			
+			if( faceDirection == Direction.DOWN ) {
+				startCY = startCY + (startFY - endCY);
+				break;
+			}
+				
+			if( faceDirection == Direction.UP ) {
+				startCY = endFY;
+				break;
+			}	
+			
+			if( faceDirection == Direction.LEFT ) {
+				startCX = endFX;
+				break;
+			}
+			
+			if( faceDirection == Direction.RIGHT ) {
+				startCX = startCX - ( endCX - startFX );
+				break;
 			}
 		}
 		
-		if( faceDirection == Direction.DOWN ) {
-			Player.setyPosition( yPosition + eachStep );
-		}
-			
-		
-		if( faceDirection == Direction.UP ) {
-			Player.setyPosition( yPosition - eachStep );
-		}
-			
-		
-		if( faceDirection == Direction.LEFT ) {
-			Player.setxPosition( xPosition - eachStep );
-		}
-			
-		
-		if( faceDirection == Direction.RIGHT ) {
-			Player.setxPosition( xPosition + eachStep );
-		}
-			
+		setxPosition(startCX);
+		setyPosition(startCY);	
 	}
 
 	public static Item getItemInHand() {
 		return itemInHand;
 	}
 
-	public static Emotion getPlayEmotion() {
-		return playEmotion;
+	public static Emotion getPlayerEmotion() {
+		return playerEmotion;
 	}
 
 	public static void setItemInHand(Item itemInHand) {
 		Player.itemInHand = itemInHand;
 	}
 
-	public static void setPlayEmotion(Emotion playEmotion) {
-		Player.playEmotion = playEmotion;
+	public static void setPlayerEmotion(Emotion playerEmotion) {
+		Player.playerEmotion = playerEmotion;
 	}
 
 	public static double getxPosition() {
