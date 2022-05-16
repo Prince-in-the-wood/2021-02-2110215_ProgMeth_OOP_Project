@@ -68,6 +68,8 @@ public class GameController {
 		else if( currentRoom instanceof Library )
 			currentRoom = new Garden();
 		
+		PlayingScreen.setRoomPane(currentRoom);
+		
 		Player.initializePlayer();
 	}
 	
