@@ -27,7 +27,7 @@ public class DialoguePane extends StackPane{
 		this.setBorder(new Border(borderStroke));
 		this.getChildren().add(gameText);
 		
-		this.setPadding(new Insets(30));
+		this.setPadding(new Insets(20));
 		this.setAlignment(Pos.TOP_LEFT);
 		
 		this.setMaxSize(810, 140);
