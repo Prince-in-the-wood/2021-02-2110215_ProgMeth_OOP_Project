@@ -15,10 +15,10 @@ import sharedObject.RenderableHolder;
 
 public class DialoguePane extends StackPane{
 	
-	private static Text gameText;
+	private static Text gameText= new Text();
 	
 	public DialoguePane() {
-		gameText = new Text("Hello I'm Anna");
+		
 		gameText.setFont(RenderableHolder.couriterryFont);
 		gameText.setFill(Color.web("#FFBD51"));
 		
