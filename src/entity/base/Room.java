@@ -2,6 +2,7 @@ package entity.base;
 
 import java.util.ArrayList;
 
+import entity.furniture.Door;
 import entity.item.Note;
 import gui.DialoguePane;
 import input.InputUtility;
@@ -49,7 +50,7 @@ public abstract class Room extends Canvas{
 		
 		for (IRenderable entity : RenderableHolder.getInstance().getEntities()) {
 			
-			if( !isCharacterDraw ) {
+			if( !isCharacterDraw && !( entity instanceof Door) ) {
 				if( entity instanceof Furniture && ((Furniture)entity).getyPosition() > Player.getyPosition()) {
 					Player.draw(gc);
 					isCharacterDraw = true;
