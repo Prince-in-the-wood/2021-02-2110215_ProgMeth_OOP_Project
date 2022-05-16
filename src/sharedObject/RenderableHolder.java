@@ -49,6 +49,7 @@ public class RenderableHolder {
 		
 		loadMainMenuResource();
 		loadCharacterSpriteAndBody();
+		loadItemResource();
 		loadBedroomResource();
 		
 	}
@@ -78,6 +79,16 @@ public class RenderableHolder {
 		characterSprite.put(Direction.UP, new Image(ClassLoader.getSystemResource("character-sprite/character_sprite_back.png").toString()));
 		characterSprite.put(Direction.LEFT, new Image(ClassLoader.getSystemResource("character-sprite/character_sprite_left.png").toString()));
 		characterSprite.put(Direction.RIGHT, new Image(ClassLoader.getSystemResource("character-sprite/character_sprite_right.png").toString()));
+	}
+	
+	private static void loadItemResource() {
+		itemSprite.put("Key",new Image(ClassLoader.getSystemResource("item/keys.png").toString()));
+		itemSprite.put("PocketKnife",new Image(ClassLoader.getSystemResource("item/knife.png").toString()));
+		
+		itemSprite.put("Melody",new Image(ClassLoader.getSystemResource("item/doll_orange.png").toString()));
+		itemSprite.put("Ivy",new Image(ClassLoader.getSystemResource("item/doll_green.png").toString()));
+		itemSprite.put("Scilla",new Image(ClassLoader.getSystemResource("item/doll_blue.png").toString()));
+		itemSprite.put("Snowdrop",new Image(ClassLoader.getSystemResource("item/doll_white.png").toString()));
 	}
 	
 	private static void loadBedroomResource() {
