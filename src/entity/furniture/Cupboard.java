@@ -85,6 +85,16 @@ public class Cupboard extends Container implements Lockable, Openable{
 	
 	@Override
 	public void observe() {
+		if( isOpened() ) {
+			close();
+			return;
+		}
+		
+		open();
+		
+		if( isLocked() )
+			return;
+			
 		if( item.size() > 0 ) {
 			for( int i = item.size() - 1 ; i >= 0 ; i++ ) {
 				if( item.get(i) instanceof Note ) {
