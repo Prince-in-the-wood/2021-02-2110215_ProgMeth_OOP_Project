@@ -27,6 +27,14 @@ public class Note extends Item {
 		this.textOnNote = textOnNote;
 	}
 	
+	public String getImageString() {
+		return imageString;
+	}
+
+	public void setImageString(String imageString) {
+		this.imageString = imageString;
+	}
+
 	public void read() {
 		DialoguePane.setGameText(textOnNote);
 	}
@@ -38,7 +46,7 @@ public class Note extends Item {
 		if( this.imageString.isEmpty() )
 			return;
 		
-		gc.drawImage(RenderableHolder.furnitureSprite.get(this.imageString) , this.getxPosition(), this.getyPosition(), width, height);
+		gc.drawImage(RenderableHolder.itemSprite.get(this.imageString) , this.getxPosition(), this.getyPosition());
 	}
 
 	
