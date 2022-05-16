@@ -45,6 +45,9 @@ public abstract class Room extends Canvas{
 	
 	public void paintComponent() {
 		GraphicsContext gc = this.getGraphicsContext2D();
+		
+		gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
+		
 		gc.drawImage(RenderableHolder.background.get(GameController.getCurrentRoom().getName()), 0 , 0 );
 		boolean isCharacterDraw = false;
 		
