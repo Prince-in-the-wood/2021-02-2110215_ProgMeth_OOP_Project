@@ -19,15 +19,16 @@ public class Player {
 	private static double xPosition;
 	private static double yPosition;
 	private static Direction faceDirection;
-	private final static double eachStep = 20;
+	private final static double eachStep = 5;
 	
-	public Player() {
+	public static void initializePlayer() {
 		itemInHand = null;
-		playEmotion = Emotion.NORMAL;		
-		//xPosition = ;
-		//YPosition = ;
+		playEmotion = Emotion.WORRIED;		
+		xPosition = 260;
+		yPosition = 260;
 		faceDirection = Direction.DOWN;
 	}
+	
 	
 	public static void useItem() { 
 		
@@ -72,19 +73,19 @@ public class Player {
 		double endFY = startFY + image.getHeight();
 		
 		if( faceDirection == Direction.DOWN ) {
-			return ( startFX <= startCX && endCX <= endFX && endCY == startFY);
+			return ( ( startFX <= endCX || startCX <= endFX ) && endCY == startFY);
 		}
 		
 		if( faceDirection == Direction.UP ) {
-			return ( startFX <= startCX && endCX <= endFX && startCY == endFY ); 
+			return ( ( startFX <= endCX || startCX <= endFX ) && startCY == endFY ); 
 		}
 		
 		if( faceDirection == Direction.LEFT) {
-			return ( startFY <= startCY && endCY <= endFY && startCX == endFX );
+			return ( ( startFY <= endCY || startCY <= endFY ) && endCX == endFX );
 		}
 		
 		if( faceDirection == Direction.RIGHT) {
-			return ( startFY <= startCY && endCY <= endFY && endCX == startFX );
+			return ( ( startFY <= endCY || startCY <= endFY ) && endCX == startFX );
 		}
 		
 		return false;
@@ -97,6 +98,7 @@ public class Player {
 		
 		for( int i = 0 ; i < furniture.size() ; i++ ) {
 			if( isInfrontOf(furniture.get(i)) ) {
+				System.out.println("Ouch" + furniture.get(i).toString());
 				return;
 			}
 		}
@@ -217,6 +219,8 @@ public class Player {
 		if (InputUtility.getKeyPressed(KeyCode.L)) {
 			useItem();
 		}
+		
+		
 	}
 	
 	

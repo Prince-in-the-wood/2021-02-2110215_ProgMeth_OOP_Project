@@ -17,8 +17,8 @@ public class GameController {
 	private static Room currentRoom;
 	private static Timer timer;
 	
-	public GameController(){
-		
+	public static void startGame(){
+		Player.initializePlayer();
 		currentRoom = new Bedroom();
 		timer = new Timer(5, 0, 0);
 	}
@@ -41,7 +41,7 @@ public class GameController {
 			return;
 		}
 		
-		if( currentRoom.isEnd()) {
+		if( currentRoom.isGameEnd()) {
 			
 			if( currentRoom instanceof Garden ) {
 				endGame();
@@ -63,6 +63,8 @@ public class GameController {
 			currentRoom = new Library();
 		else if( currentRoom instanceof Library )
 			currentRoom = new Garden();
+		
+		Player.initializePlayer();
 	}
 	
 	public static void endGame() {
