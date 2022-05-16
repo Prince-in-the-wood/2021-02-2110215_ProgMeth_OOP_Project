@@ -2,12 +2,14 @@ package entity.base;
 
 import java.util.ArrayList;
 
+import entity.item.Note;
 import gui.DialoguePane;
 import input.InputUtility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import logic.GameController;
 import logic.Player;
 import sharedObject.IRenderable;
 import sharedObject.RenderableHolder;
@@ -18,33 +20,31 @@ public abstract class Room extends Canvas{
 	private String startText;
 	private String endText;
 	private ArrayList<Furniture> furniture;
-	private boolean isEnd;
+	private boolean isGameEnd;
 	
-	private double floorStartX;
-	private double floorStartY;
+	private final double floorStartX = 0;
+	private final double floorStartY = 120;
 	
 	
-	public Room() {
-
-		setEnd(false);
+	public Room(String name, String startText, String endText ) {
+		super();
 		
+		this.setName(name);
+		this.setWidth(720);
+		this.setHeight(520);
+		
+		furniture = new ArrayList<Furniture>();
+		
+		setStartText(startText);
+		setEndText(endText);
+		setIsGameEnd(false);
+		
+		startGame();
 	}
 	
-
-	public void addListerner() {
-		this.setOnKeyPressed((KeyEvent event) -> {
-			InputUtility.setKeyPressed(event.getCode(), true);
-		});
-
-		this.setOnKeyReleased((KeyEvent event) -> {
-			InputUtility.setKeyPressed(event.getCode(), false);
-		});
-
-	}
-
 	public void paintComponent() {
 		GraphicsContext gc = this.getGraphicsContext2D();
-		
+		gc.drawImage(RenderableHolder.background.get(GameController.getCurrentRoom().getName()), 0 , 0 );
 		boolean isCharacterDraw = false;
 		
 		for (IRenderable entity : RenderableHolder.getInstance().getEntities()) {
@@ -72,11 +72,11 @@ public abstract class Room extends Canvas{
 	
 
 	// method
-	public void start() {
+	public void startGame() {
 		DialoguePane.setGameText(startText);
 	}
 	
-	public void end() {
+	public void endGame() {
 		DialoguePane.setGameText(endText);
 	}
 	
@@ -115,12 +115,12 @@ public abstract class Room extends Canvas{
 		this.furniture = furniture;
 	}
 	
-	public boolean isEnd() {
-		return isEnd;
+	public boolean isGameEnd() {
+		return isGameEnd;
 	}
 
-	public void setEnd(boolean isEnd) {
-		this.isEnd = isEnd;
+	public void setIsGameEnd(boolean isGameEnd) {
+		this.isGameEnd = isGameEnd;
 	}
 
 
@@ -128,20 +128,8 @@ public abstract class Room extends Canvas{
 		return floorStartX;
 	}
 
-
-	public void setFloorStartX(double floorStartX) {
-		this.floorStartX = floorStartX;
-	}
-
-
 	public double getFloorStartY() {
 		return floorStartY;
 	}
-
-
-	public void setFloorStartY(double floorStartY) {
-		this.floorStartY = floorStartY;
-	}
-
 
 }
