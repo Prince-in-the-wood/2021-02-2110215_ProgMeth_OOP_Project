@@ -14,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Border;
@@ -43,15 +44,13 @@ public class PlayingScreen extends VBox{
 		
 		VBox sidePane = initializeSidePane();
 		
+		GameController.startGame();
+		
+		initializeRoomPane();
+		
 		dialoguePane = new DialoguePane();
 		itemInHandBox = new ItemInHandBox();
-		
-		room = new Pane();
-		
-		room.setMaxSize(720, 520);
-		room.setMinSize(720, 520);
-		room.setBorder(new Border(new BorderStroke(Color.web("#FFBD51"), BorderStrokeStyle.SOLID, null, null)));
-		
+				
 		HBox upperPane = new HBox();
 		upperPane.getChildren().addAll(sidePane, room);
 		
@@ -66,6 +65,9 @@ public class PlayingScreen extends VBox{
 		this.setSpacing(10);
 		this.setHeight(760);
 		this.setWidth(1120);
+		
+
+		this.addListerner();
 		
 		animation = new AnimationTimer() {
 			public void handle(long now) {
@@ -102,6 +104,7 @@ public class PlayingScreen extends VBox{
 		});
 		
 		menuButton.setOnMouseClicked(event -> {
+			animation.stop();
 			RenderableHolder.soundFX.get("ButtonClick").play();
 			
 			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -130,7 +133,30 @@ public class PlayingScreen extends VBox{
 		return sidePane;
 		
 	}
+	
+	public void initializeRoomPane(){
+		
+		room = new Pane();
+		
+		room.setMaxSize(720, 520);
+		room.setMinSize(720, 520);
+		room.setBorder(new Border(new BorderStroke(Color.web("#FFBD51"), BorderStrokeStyle.SOLID, null, null)));
+		room.getChildren().add(GameController.getCurrentRoom());
+		
+	}
+	
+	public void addListerner() {
+		this.setOnKeyPressed((KeyEvent event) -> {
+			InputUtility.setKeyPressed(event.getCode(), true);
+		});
 
+		this.setOnKeyReleased((KeyEvent event) -> {
+			InputUtility.setKeyPressed(event.getCode(), false);
+		});
+
+	}
+
+	
 	public static TimerPane getTimerPane() {
 		return timerPane;
 	}
