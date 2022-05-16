@@ -48,7 +48,9 @@ public class RenderableHolder {
 	public static void loadResource() {
 		
 		loadMainMenuResource();
+		loadCharacterSpriteAndBody();
 		loadBedroomResource();
+		
 	}
 	
 	private static void loadMainMenuResource() {
@@ -58,16 +60,24 @@ public class RenderableHolder {
 		background.put("OldPaper",new Image(ClassLoader.getSystemResource("OldPaperBG.jpeg").toString()));
 		background.put("HowToPlay",new Image(ClassLoader.getSystemResource("HowToPlay.png").toString()));
 		
-		characterBody.put(Emotion.NORMAL, new Image(ClassLoader.getSystemResource("Character_Normal.png").toString()));
-		characterBody.put(Emotion.WORRIED, new Image(ClassLoader.getSystemResource("Character_Worried.png").toString()));
-		characterBody.put(Emotion.SHOCK, new Image(ClassLoader.getSystemResource("Character_Shock.png").toString()));
-		
 		bgMusic.put("MainMenuBGM", new AudioClip(ClassLoader.getSystemResource("MemoriesBGM.mp3").toString()));
 		soundFX.put("ButtonClick", new AudioClip(ClassLoader.getSystemResource("ClickSFX.wav").toString()));
 		
 		juiceICTFont = Font.loadFont( ClassLoader.getSystemResource("JUICE.ttf").toString(), 45 );
 		couriterryFont = Font.loadFont( ClassLoader.getSystemResource("AatrixCOURITER.ttf").toString(), 20 );
 	
+	}
+	
+	private static void loadCharacterSpriteAndBody() {
+
+		characterBody.put(Emotion.NORMAL, new Image(ClassLoader.getSystemResource("Character_Normal.png").toString()));
+		characterBody.put(Emotion.WORRIED, new Image(ClassLoader.getSystemResource("Character_Worried.png").toString()));
+		characterBody.put(Emotion.SHOCK, new Image(ClassLoader.getSystemResource("Character_Shock.png").toString()));
+		
+		characterSprite.put(Direction.DOWN, new Image(ClassLoader.getSystemResource("character-sprite/character_sprite_front.png").toString()));
+		characterSprite.put(Direction.UP, new Image(ClassLoader.getSystemResource("character-sprite/character_sprite_back.png").toString()));
+		characterSprite.put(Direction.LEFT, new Image(ClassLoader.getSystemResource("character-sprite/character_sprite_left.png").toString()));
+		characterSprite.put(Direction.RIGHT, new Image(ClassLoader.getSystemResource("character-sprite/character_sprite_right.png").toString()));
 	}
 	
 	private static void loadBedroomResource() {
