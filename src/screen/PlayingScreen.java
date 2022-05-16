@@ -14,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -171,5 +172,10 @@ public class PlayingScreen extends VBox{
 		return animation;
 	}
 	
+	
+	public static void setCharacterPane() {
+		character.getChildren().clear();
+		character.setCharacterPane();
+	}
 
 }
