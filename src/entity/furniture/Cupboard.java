@@ -65,7 +65,7 @@ public class Cupboard extends Container implements Lockable, Openable{
 			setIsLocked(false);
 			this.open();
 			
-			for( int i = item.size() - 1 ; i >= 0 ; i++ ) {
+			for( int i = item.size() - 1 ; i >= 0 ; i-- ) {
 				item.get(i).setIsVisible(true);
 			}
 			
@@ -96,7 +96,7 @@ public class Cupboard extends Container implements Lockable, Openable{
 			return;
 			
 		if( item.size() > 0 ) {
-			for( int i = item.size() - 1 ; i >= 0 ; i++ ) {
+			for( int i = item.size() - 1 ; i >= 0 ; i-- ) {
 				if( item.get(i) instanceof Note ) {
 					((Note)item.get(i)).read();
 				}

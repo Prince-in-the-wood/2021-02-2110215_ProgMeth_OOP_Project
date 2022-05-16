@@ -35,7 +35,7 @@ public class Sofa extends Furniture implements Cuttable{
 		this.setIsCut(true);
 		this.setImageString("CutSofa");
 		
-		for( int i = thingBehind.size() - 1 ; i >= 0 ; i++ ) {
+		for( int i = thingBehind.size() - 1 ; i >= 0 ; i-- ) {
 			thingBehind.get(i).setIsVisible(true);
 		}
 	}
@@ -71,7 +71,7 @@ public class Sofa extends Furniture implements Cuttable{
 		
 		}else if( thingBehind.size() > 0 ) {
 			
-			for( int i = thingBehind.size() - 1 ; i >= 0 ; i++ ) {
+			for( int i = thingBehind.size() - 1 ; i >= 0 ; i-- ) {
 				
 				if( thingBehind.get(i) instanceof Note ) {
 					((Note)thingBehind.get(i)).read();

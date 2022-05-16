@@ -19,9 +19,9 @@ public class TableWithNote extends Container{
 		
 		ArrayList<Item> item = this.getItem();
 		
-		if(item.size() >= 0 ) {
+		if(item.size() > 0 ) {
 			
-			for( int i = item.size() - 1 ; i >= 0 ; i++ ) {
+			for( int i = item.size() - 1 ; i >= 0 ; i-- ) {
 				if( item.get(i) instanceof Note ) {
 					((Note)item.get(i)).read();
 				}

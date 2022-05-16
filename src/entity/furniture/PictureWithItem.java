@@ -57,7 +57,7 @@ public class PictureWithItem extends Picture{
 		
 		if( itemBehind.size() > 0 ) {
 			
-			for( int i = itemBehind.size() - 1 ; i >= 0 ; i++ ) {
+			for( int i = itemBehind.size() - 1 ; i >= 0 ; i-- ) {
 			
 				if( itemBehind.get(i) instanceof Note ) {
 					((Note)itemBehind.get(i)).read();
@@ -96,7 +96,7 @@ public class PictureWithItem extends Picture{
 			setIsLocked(false);
 			this.setImageString("OpenedSafe");
 			
-			for( int i = itemBehind.size() - 1 ; i >= 0 ; i++ ) {
+			for( int i = itemBehind.size() - 1 ; i >= 0 ; i-- ) {
 				itemBehind.get(i).setIsVisible(true);
 			}
 			
