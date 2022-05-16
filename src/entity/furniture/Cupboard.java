@@ -21,8 +21,8 @@ public class Cupboard extends Container implements Lockable, Openable{
 	private boolean isOpened;
 	private ArrayList<Item> item;
 	
-	public Cupboard(String name, int xPosition, int yPosition, String text) {
-		super(name, xPosition, yPosition);
+	public Cupboard(String name, int xPosition, int yPosition, int z ) {
+		super(name, xPosition, yPosition, z);
 		
 		item  = new ArrayList<Item>();
 		setIsLocked(true);

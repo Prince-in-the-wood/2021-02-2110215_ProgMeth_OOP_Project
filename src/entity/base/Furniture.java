@@ -14,14 +14,15 @@ public abstract class Furniture implements IRenderable{
 	private boolean isVisible;
 	private String imageString;
 	
-	public Furniture(String name, int xPosition, int yPosition) {
+	public Furniture(String name, int xPosition, int yPosition, int z) {
 		setName(name);
 		setxPosition(xPosition);
 		setyPosition(yPosition);
 		setImageString(name);
+		setIsVisible(true);
+		
+		this.z = z;
 	}
-
-	
 	// getter and setter
 
 	public String getName() {

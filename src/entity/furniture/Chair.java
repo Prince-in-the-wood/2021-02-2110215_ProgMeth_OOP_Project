@@ -4,8 +4,8 @@ import entity.base.Furniture;
 
 public class Chair extends Furniture{
 
-	public Chair(String name, int xPosition, int yPosition) {
-		super(name, xPosition, yPosition);
+	public Chair(String name, int xPosition, int yPosition, int z) {
+		super(name, xPosition, yPosition, z);
 	}
 
 }

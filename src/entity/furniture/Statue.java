@@ -17,8 +17,8 @@ public class Statue extends Furniture implements Updateable{
 	private char answerLetter;
 	private boolean isUpdated;
 
-	public Statue(String name, int xPosition, int yPosition, char letterOnStatue, char answerLetter) {
-		super(name, xPosition, yPosition);
+	public Statue(String name, int xPosition, int yPosition, int z, char letterOnStatue, char answerLetter) {
+		super(name, xPosition, yPosition, z);
 	
 		this.letterOnStatue = letterOnStatue;
 		this.answerLetter = answerLetter;

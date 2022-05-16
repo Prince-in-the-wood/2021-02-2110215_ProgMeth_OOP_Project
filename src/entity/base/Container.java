@@ -6,8 +6,8 @@ public abstract class Container extends Furniture{
 	
 	private ArrayList<Item> item;
 	
-	public Container(String name, int xPosition, int yPosition) {
-		super(name, xPosition, yPosition);
+	public Container(String name, int xPosition, int yPosition, int z) {
+		super(name, xPosition, yPosition, z );
 		
 		item = new ArrayList<Item>();
 	}

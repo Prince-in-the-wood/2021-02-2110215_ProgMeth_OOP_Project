@@ -9,9 +9,9 @@ public class TableWithLamp extends Furniture implements Updateable{
 	
 	private boolean isUpdated;
 
-	public TableWithLamp(String name, int xPosition, int yPosition) {
+	public TableWithLamp(String name, int xPosition, int yPosition, int z) {
 		
-		super(name, xPosition, yPosition);
+		super(name, xPosition, yPosition, z);
 		setIsUpdated(false);
 	}
 

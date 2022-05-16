@@ -13,8 +13,8 @@ public class Bookshelf extends Container{
 	
 	private ArrayList<Item> item;
 	
-	public Bookshelf(String name, int xPosition, int yPosition) {
-		super(name, xPosition, yPosition);		
+	public Bookshelf(String name, int xPosition, int yPosition, int z) {
+		super(name, xPosition, yPosition, z);		
 		item = new ArrayList<Item>();
 	}
 

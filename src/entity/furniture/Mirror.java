@@ -18,8 +18,8 @@ public class Mirror extends Container implements Updateable {
 
 	private boolean isUpdated;
 	
-	public Mirror(String name, int xPosition, int yPosition) {
-		super(name, xPosition, yPosition);
+	public Mirror(String name, int xPosition, int yPosition, int z) {
+		super(name, xPosition, yPosition, z);
 		
 		setIsUpdated(false);
 	}

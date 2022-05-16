@@ -9,8 +9,8 @@ public class Picture extends Furniture {
 
 	private String description;
 	
-	public Picture(String name, int xPosition, int yPosition, String description) {
-		super(name, xPosition, yPosition);
+	public Picture(String name, int xPosition, int yPosition, int z, String description) {
+		super(name, xPosition, yPosition, z);
 
 		setDescription(description);
 	}

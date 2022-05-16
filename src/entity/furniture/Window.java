@@ -11,8 +11,8 @@ public class Window extends Furniture implements Openable{
 
 	private boolean isOpened;
 
-	public Window(String name, int xPosition, int yPosition) {
-		super(name, xPosition, yPosition);
+	public Window(String name, int xPosition, int yPosition, int z) {
+		super(name, xPosition, yPosition , z );
 		setIsOpened(false);
 	}
 

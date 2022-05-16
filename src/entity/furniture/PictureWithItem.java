@@ -16,8 +16,8 @@ public class PictureWithItem extends Picture{
 	private boolean isSafeBehind;
 	private boolean isLocked;
 	
-	public PictureWithItem(String name, int xPosition, int yPosition, String description) {
-		super(name, xPosition, yPosition, description);
+	public PictureWithItem(String name, int xPosition, int yPosition, int z, String description) {
+		super(name, xPosition, yPosition, z, description);
 		
 		itemBehind = new ArrayList<Item>();
 		setIsSafeBehind(false);

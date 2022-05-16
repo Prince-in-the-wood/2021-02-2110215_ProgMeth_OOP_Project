@@ -20,8 +20,8 @@ public class Sofa extends Furniture implements Cuttable{
 	private boolean isSomethingBehind;
 	private ArrayList<Item> thingBehind;
 	
-	public Sofa(String name, int xPosition, int yPosition, boolean isSomethingBehind) {
-		super(name, xPosition, yPosition);		
+	public Sofa(String name, int xPosition, int yPosition, int z,boolean isSomethingBehind) {
+		super(name, xPosition, yPosition, z);		
 		
 		setIsCut(false);	
 		setIsSomethingBehind(isSomethingBehind);

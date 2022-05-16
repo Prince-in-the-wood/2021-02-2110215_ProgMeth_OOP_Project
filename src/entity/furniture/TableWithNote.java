@@ -10,8 +10,8 @@ import entity.item.PocketKnife;
 
 public class TableWithNote extends Container{
 
-	public TableWithNote(String name, int xPosition, int yPosition) {
-		super(name, xPosition, yPosition);
+	public TableWithNote(String name, int xPosition, int yPosition, int z ) {
+		super(name, xPosition, yPosition, z );
 	}
 	
 	@Override
