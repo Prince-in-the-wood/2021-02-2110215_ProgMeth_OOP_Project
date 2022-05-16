@@ -22,6 +22,7 @@ public class Statue extends Furniture implements Updateable{
 	
 		this.letterOnStatue = letterOnStatue;
 		this.answerLetter = answerLetter;
+		this.isUpdated = false;
 	}
 
 
