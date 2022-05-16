@@ -12,6 +12,7 @@ import entity.item.PocketKnife;
 import gui.DialoguePane;
 import gui.ItemInHandBox;
 import javafx.scene.canvas.GraphicsContext;
+import logic.GameController;
 import logic.Player;
 import sharedObject.RenderableHolder;
 
@@ -37,6 +38,10 @@ public class Cupboard extends Container implements Lockable, Openable{
 		}else {
 			this.setIsOpened(true);
 			this.setImageString("OpenedCupboard");
+			if( item.size() > 0 ) {
+				for( int i = item.size() - 1 ; i >= 0 ; i-- ) 
+					item.get(i).setIsVisible(true);
+			}
 		}
 	}
 	
@@ -44,6 +49,11 @@ public class Cupboard extends Container implements Lockable, Openable{
 	public void close() {
 		this.setIsOpened(false);
 		this.setImageString(this.getName());
+		
+		if( item.size() > 0 ) {
+			for( int i = item.size() - 1 ; i >= 0 ; i-- ) 
+				item.get(i).setIsVisible(false);
+		}
 	}
 
 	@Override
@@ -65,10 +75,6 @@ public class Cupboard extends Container implements Lockable, Openable{
 			setIsLocked(false);
 			this.open();
 			
-			for( int i = item.size() - 1 ; i >= 0 ; i-- ) {
-				item.get(i).setIsVisible(true);
-			}
-			
 		}else {
 			DialoguePane.setGameText("I think it doesn't fit here.");
 		}
@@ -85,7 +91,7 @@ public class Cupboard extends Container implements Lockable, Openable{
 	
 	@Override
 	public void observe() {
-		if( isOpened() ) {
+		if( isOpened() && item.size() <= 1 ) {
 			close();
 			return;
 		}
