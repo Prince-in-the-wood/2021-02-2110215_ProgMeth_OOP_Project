@@ -66,35 +66,30 @@ public class Player {
 		double endCX = startCX + character.getWidth();
 		double endCY = startCY + character.getHeight();
 		
+		double[][] xyFurniture = furniture.getAreaForInteract();
 		
-		double startFX = furniture.getxPosition();
-		double startFY = furniture.getyPosition();
-		
-		Image image = RenderableHolder.furnitureSprite.get(furniture.getImageString());
-		double endFX = startFX + image.getWidth();
-		double endFY = startFY + image.getHeight();
 			
-		if ( startCY > endFY || endCY < startFY ) {
+		if ( startCY > xyFurniture[1][1] || endCY < xyFurniture[0][1] ) {
 			return false;
 		}
-	    if ( endCX < startFX || startCX > endFX ) {
+	    if ( endCX < xyFurniture[0][0] || startCX > xyFurniture[1][0] ) {
 	        return false;
 	    }
 		
 		if( faceDirection == Direction.DOWN ) {
-			return endCY == startFY;
+			return endCY == xyFurniture[0][1];
 		}
 		
 		if( faceDirection == Direction.UP ) {
-			return startCY == endFY; 
+			return startCY == xyFurniture[1][1]; 
 		}
 		
 		if( faceDirection == Direction.LEFT) {
-			return endCX == endFX;
+			return endCX == xyFurniture[1][0];
 		}
 		
 		if( faceDirection == Direction.RIGHT) {
-			return endCX == startFX;
+			return endCX == xyFurniture[0][0];
 		}
 		
 		return false;
@@ -131,37 +126,32 @@ public class Player {
 		
 		for( int i = 0 ; i < furniture.size() ; i++ ) {
 			
-			double startFX = furniture.get(i).getxPosition();
-			double startFY = furniture.get(i).getyPosition();
+			double[][] xyFurniture = furniture.get(i).getAreaForInteract();
 			
-			Image image = RenderableHolder.furnitureSprite.get(furniture.get(i).getImageString());
-			double endFX = startFX + image.getWidth();
-			double endFY = startFY + image.getHeight();
-			
-			if ( startCY >= endFY || endCY <= startFY ) {
+			if ( startCY >= xyFurniture[1][1] || endCY <= xyFurniture[0][1] ) {
 				continue;
 			}
-		    if ( endCX <= startFX || startCX >= endFX ) {
+		    if ( endCX <= xyFurniture[0][0] || startCX >= xyFurniture[1][0] ) {
 		        continue;
 		    }
 			
 			if( faceDirection == Direction.DOWN ) {
-				startCY = startCY + (startFY - endCY);
+				startCY = startCY + (xyFurniture[0][1] - endCY);
 				break;
 			}
 				
 			if( faceDirection == Direction.UP ) {
-				startCY = endFY;
+				startCY = xyFurniture[1][1];
 				break;
 			}	
 			
 			if( faceDirection == Direction.LEFT ) {
-				startCX = endFX;
+				startCX = xyFurniture[1][0];
 				break;
 			}
 			
 			if( faceDirection == Direction.RIGHT ) {
-				startCX = startCX - ( endCX - startFX );
+				startCX = startCX - ( endCX - xyFurniture[0][0] );
 				break;
 			}
 		}
