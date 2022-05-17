@@ -2,6 +2,9 @@ package entity.furniture;
 
 import entity.base.Updateable;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+import sharedObject.RenderableHolder;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -11,7 +14,8 @@ public class Statue extends Furniture implements Updateable{
 	 
 	private final ArrayList<Character> characterSet = new ArrayList<Character>(
 													  Arrays.asList('M', 'H' ,'I' , 'P' , 'E', 'N' ,'A' , 'S' ,'O' ));
-	private final double translationDis = 50;
+	private final double translationDisY = 50;
+	private final double translationDisX = 35;
 	
 	private char letterOnStatue;
 	private char answerLetter;
@@ -85,7 +89,9 @@ public class Statue extends Furniture implements Updateable{
 		double x = super.getxPosition();
 		double y = super.getyPosition();
 		
-		gc.fillText(Character.toString(letterOnStatue), x, y + translationDis );
+		gc.setFont(RenderableHolder.juiceICTFont);
+		gc.setFill(Color.BROWN);
+		gc.fillText(Character.toString(letterOnStatue), x + translationDisX, y + translationDisY );
 		
 	}
 }
