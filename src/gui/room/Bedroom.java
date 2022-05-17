@@ -19,6 +19,9 @@ public class Bedroom extends Room{
 		Door door = new Door("Door", 680, 420, -1);
 		
 		Cupboard cupboard = new Cupboard("Cupboard", 80 ,40, 1 );
+		double[][] cupboardArea = cupboard.getAreaForInteract();
+		cupboardArea[0][1] = 180;
+		cupboard.setAreaForInteract(cupboardArea);
 		Note noteWithDoll = new Note("Note1", 100, 180, 2,
 							"Yeah, you found Melody!\n"
 							+ "I’m glad to invite you to visit my new room!\n"
@@ -30,8 +33,20 @@ public class Bedroom extends Room{
 		cupboard.getItem().add(doorKey);
 		
 		Window window = new Window("Window", 540, 40 , 4 );
+		double[][] windowArea = window.getAreaForInteract();
+		windowArea[1][1] = 180;
+		window.setAreaForInteract(windowArea);
+		
 		Bed bed = new Bed("Bed", 320 , 200 , 5 );
+		double[][] bedArea = bed.getAreaForInteract();
+		bedArea[0][1] = 220;
+		bed.setAreaForInteract(bedArea);
+		
 		TableWithLamp tableWithLamp = new TableWithLamp("TableWithLamp", 500 ,160 , 4);
+		double[][] tableArea = tableWithLamp.getAreaForInteract();
+		tableArea[0][1] = 240;
+		tableWithLamp.setAreaForInteract(tableArea);
+		
 		Chair chair = new Chair("Chair", 100, 400 , 6);	
 		
 		TableWithNote tableWithNote = new TableWithNote("TableWithNote", 40 ,440 , 7 );
