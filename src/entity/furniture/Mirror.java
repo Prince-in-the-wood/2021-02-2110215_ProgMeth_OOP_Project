@@ -5,7 +5,9 @@ import entity.item.Key;
 import entity.item.Note;
 import entity.item.PocketKnife;
 import gui.DialoguePane;
+import gui.room.Garden;
 import javafx.scene.canvas.GraphicsContext;
+import logic.GameController;
 import sharedObject.RenderableHolder;
 
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ public class Mirror extends Container implements Updateable {
 	public Mirror(String name, int xPosition, int yPosition, int z) {
 		super(name, xPosition, yPosition, z);
 		
-		setIsUpdated(false);
+		isUpdated = false;
 	}
 
 
@@ -41,6 +43,7 @@ public class Mirror extends Container implements Updateable {
 	}
 	
 	public void observe() {
+		
 		if( !this.isUpdated() ) {
 			this.update();
 		}else{ 
@@ -80,6 +83,9 @@ public class Mirror extends Container implements Updateable {
 
 	public void setIsUpdated(boolean isUpdated) {
 		this.isUpdated = isUpdated;
+		
+		if( GameController.getCurrentRoom() instanceof Garden )
+			((Garden)GameController.getCurrentRoom()).setUpdate();
 	}	
 	
 	
