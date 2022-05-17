@@ -23,7 +23,7 @@ public abstract class Room extends Canvas{
 	private boolean isGameEnd;
 	
 	private final double floorStartX = 0;
-	private final double floorStartY = 120;
+	private final double floorStartY = 140;
 	
 	
 	public Room(String name, String startText ) {
