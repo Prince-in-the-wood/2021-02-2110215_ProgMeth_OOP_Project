@@ -42,7 +42,7 @@ public class Bedroom extends Room{
 		bedArea[0][1] = 220;
 		bed.setAreaForInteract(bedArea);
 		
-		TableWithLamp tableWithLamp = new TableWithLamp("TableWithLamp", 500 ,160 , 4);
+		TableWithLamp tableWithLamp = new TableWithLamp("TableWithLamp", 480 ,160 , 4);
 		double[][] tableArea = tableWithLamp.getAreaForInteract();
 		tableArea[0][1] = 240;
 		tableWithLamp.setAreaForInteract(tableArea);
@@ -69,7 +69,6 @@ public class Bedroom extends Room{
 		this.getFurniture().add( tableWithNote );
 		
 		for( Furniture furniture: this.getFurniture() ) {
-			System.out.println();
 			RenderableHolder.getInstance().add(furniture);
 		}
 		
