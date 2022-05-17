@@ -20,14 +20,14 @@ public class Player {
 	private static double xPosition;
 	private static double yPosition;
 	private static Direction faceDirection;
-	private final static double eachStep = 5;
+	private final static double eachStep = 4.5;
 	private final static double areaForFoot = 40;
 	
 	public static void initializePlayer() {
 		itemInHand = null;
 		ItemInHandBox.deleteImageInBox();
 		playerEmotion = Emotion.WORRIED;		
-		xPosition = 260;
+		xPosition = 40;
 		yPosition = 260;
 		faceDirection = Direction.DOWN;
 	}
