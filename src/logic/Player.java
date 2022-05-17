@@ -259,6 +259,12 @@ public class Player {
 		
 		
 	}
+
+
+	public static double getAreaforfoot() {
+		return areaForFoot;
+	}
+	
 	
 	
 	
