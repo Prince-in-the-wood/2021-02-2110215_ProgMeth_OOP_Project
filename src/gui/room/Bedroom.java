@@ -14,8 +14,7 @@ public class Bedroom extends Room{
 				+ "but I can feel it is real.\n"
 				+ "It’s cold here. I try to think but my brain is numb.\n"
 				+ "Maybe someone will call me…\n"
-				+ "Me…? Wait… I… Who am I?\n"
-				, "Where will the corridor lead?");
+				+ "Me…? Wait… I… Who am I?\n");
 
 		Door door = new Door("Door", 680, 420, -1);
 		

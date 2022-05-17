@@ -19,7 +19,6 @@ public abstract class Room extends Canvas{
 	
 	private String name;
 	private String startText;
-	private String endText;
 	private ArrayList<Furniture> furniture;
 	private boolean isGameEnd;
 	
@@ -27,7 +26,7 @@ public abstract class Room extends Canvas{
 	private final double floorStartY = 120;
 	
 	
-	public Room(String name, String startText, String endText ) {
+	public Room(String name, String startText ) {
 		super();
 		
 		this.setName(name);
@@ -37,7 +36,6 @@ public abstract class Room extends Canvas{
 		furniture = new ArrayList<Furniture>();
 		
 		setStartText(startText);
-		setEndText(endText);
 		setIsGameEnd(false);
 		
 		startGame();
@@ -80,12 +78,6 @@ public abstract class Room extends Canvas{
 		DialoguePane.setGameText(startText);
 	}
 	
-	public void endGame() {
-		DialoguePane.setGameText(endText);
-	}
-	
-
-	
 	// getter and setter
 	public String getName() {
 		return name;
@@ -101,14 +93,6 @@ public abstract class Room extends Canvas{
 
 	public void setStartText(String startText) {
 		this.startText = startText;
-	}
-
-	public String getEndText() {
-		return endText;
-	}
-
-	public void setEndText(String endText) {
-		this.endText = endText;
 	}
 
 	public ArrayList<Furniture> getFurniture() {
