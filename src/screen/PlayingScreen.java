@@ -142,7 +142,7 @@ public class PlayingScreen extends VBox{
 		
 		room.setMaxSize(720, 520);
 		room.setMinSize(720, 520);
-		room.setBorder(new Border(new BorderStroke(Color.web("#FFBD51"), BorderStrokeStyle.SOLID, null, null)));
+	//	room.setBorder(new Border(new BorderStroke(Color.web("#FFBD51"), BorderStrokeStyle.SOLID, null, null)));
 		room.getChildren().add(GameController.getCurrentRoom());
 		
 	}
