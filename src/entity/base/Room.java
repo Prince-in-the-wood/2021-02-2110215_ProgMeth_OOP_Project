@@ -52,7 +52,8 @@ public abstract class Room extends Canvas{
 		for (IRenderable entity : RenderableHolder.getInstance().getEntities()) {
 			
 			if( !isCharacterDraw && !( entity instanceof Door) ) {
-				if( entity instanceof Furniture && ((Furniture)entity).getyPosition() > Player.getyPosition()) {
+				double y = RenderableHolder.characterSprite.get(Player.getFaceDirection()).getHeight();
+				if( entity instanceof Furniture && ((Furniture)entity).getAreaForInteract()[0][1] >= Player.getyPosition() + y ) {
 					Player.draw(gc);
 					isCharacterDraw = true;
 				}else if( entity instanceof Item && ((Item)entity).getyPosition() > Player.getyPosition()) {
