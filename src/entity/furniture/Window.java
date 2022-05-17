@@ -18,8 +18,9 @@ public class Window extends Furniture implements Openable{
 
 	@Override
 	public void open() {
-		setImageString("OpenedWindow");
+
 		setIsOpened(true);
+		setImageString("OpenedWindow");
 	}
 
 	@Override
@@ -27,19 +28,10 @@ public class Window extends Furniture implements Openable{
 		return isOpened;
 	}
 
-
-	@Override
-	public void close() {
-		setImageString(this.getName());
-		setIsOpened(false);
-	}
-
 	@Override
 	public void observe() {
-		if( this.isOpened() )
-			this.close();
-		else
-			this.isOpened();
+		if( !this.isOpened() )
+			this.open();
 		
 		DialoguePane.setGameText("Why everything is silent?");
 	}
