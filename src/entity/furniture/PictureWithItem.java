@@ -58,19 +58,21 @@ public class PictureWithItem extends Picture{
 		if( itemBehind.size() > 0 ) {
 			
 			for( int i = itemBehind.size() - 1 ; i >= 0 ; i-- ) {
-			
+				
 				if( itemBehind.get(i) instanceof Note ) {
+				
 					((Note)itemBehind.get(i)).read();
-				}
-						
-				if( itemBehind.get(i) instanceof PocketKnife ) {
+				
+				}else if( itemBehind.get(i) instanceof PocketKnife ) {
+					
 					((PocketKnife)itemBehind.get(i)).pick();
 					itemBehind.remove(i);
-				}
-						
-				if( itemBehind.get(i) instanceof Key ) {
+					
+				}else if( itemBehind.get(i) instanceof Key ) {
+				
 					((Key)itemBehind.get(i)).pick();
 					itemBehind.remove(i);
+				
 				}
 			}
 			

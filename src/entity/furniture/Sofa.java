@@ -25,6 +25,7 @@ public class Sofa extends Furniture implements Cuttable{
 		
 		setIsCut(false);	
 		setIsSomethingBehind(isSomethingBehind);
+		this.thingBehind = new ArrayList<Item>(); 
 	}
 
 
@@ -74,17 +75,19 @@ public class Sofa extends Furniture implements Cuttable{
 			for( int i = thingBehind.size() - 1 ; i >= 0 ; i-- ) {
 				
 				if( thingBehind.get(i) instanceof Note ) {
-					((Note)thingBehind.get(i)).read();
-				}
 				
-				if( thingBehind.get(i) instanceof PocketKnife ) {
+					((Note)thingBehind.get(i)).read();
+				
+				}else if( thingBehind.get(i) instanceof PocketKnife ) {
+				
 					((PocketKnife)thingBehind.get(i)).pick();
 					thingBehind.remove(i);
-				}
 				
-				if( thingBehind.get(i) instanceof Key ) {
+				}else if( thingBehind.get(i) instanceof Key ) {
+					
 					((Key)thingBehind.get(i)).pick();
 					thingBehind.remove(i);
+				
 				}
 			}
 		}else {

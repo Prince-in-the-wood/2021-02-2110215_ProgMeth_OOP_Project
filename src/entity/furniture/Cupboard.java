@@ -88,18 +88,21 @@ public class Cupboard extends Container implements Lockable, Openable{
 			
 		if( item.size() > 0 ) {
 			for( int i = item.size() - 1 ; i >= 0 ; i-- ) {
-				if( item.get(i) instanceof Note ) {
-					((Note)item.get(i)).read();
-				}
 				
-				if( item.get(i) instanceof PocketKnife ) {
+				if( item.get(i) instanceof Note ) {
+					
+					((Note)item.get(i)).read();
+				
+				}else if( item.get(i) instanceof PocketKnife ) {
+					
 					((PocketKnife)item.get(i)).pick();
 					item.remove(i);
-				}
 				
-				if( item.get(i) instanceof Key ) {
+				}else if( item.get(i) instanceof Key ) {
+					
 					((Key)item.get(i)).pick();
 					item.remove(i);
+			
 				}
 			}
 		}else {
