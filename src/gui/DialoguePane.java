@@ -2,6 +2,8 @@ package gui;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderStrokeStyle;
@@ -25,6 +27,8 @@ public class DialoguePane extends StackPane{
 		BorderStroke borderStroke = new BorderStroke(Color.web("#FFBD51"), BorderStrokeStyle.SOLID,
 													  new CornerRadii(10), new BorderWidths(5));
 		this.setBorder(new Border(borderStroke));
+		this.setBackground(new Background(new BackgroundFill(Color.web("#202020"), new CornerRadii(10), Insets.EMPTY)));
+		
 		this.getChildren().add(gameText);
 		
 		this.setPadding(new Insets(20));
