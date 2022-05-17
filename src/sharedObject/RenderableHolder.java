@@ -52,7 +52,7 @@ public class RenderableHolder {
 		loadItemResource();
 		loadBedroomResource();
 		loadLivingRoomResource();
-		
+		loadLibraryResource();
 	}
 	
 	private static void loadMainMenuResource() {
@@ -123,8 +123,25 @@ public class RenderableHolder {
 		
 		furnitureSprite.put("LongTableWithLamp",new Image(ClassLoader.getSystemResource("livingroom/LongTableWithLamp.png").toString()));
 	
+	}
+	
+	private static void loadLibraryResource() {
+		background.put("Library",new Image(ClassLoader.getSystemResource("library/LibraryBG.png").toString()));
+		
+		furnitureSprite.put("BigBookshelf",new Image(ClassLoader.getSystemResource("library/bigBookshelf.png").toString()));
+		furnitureSprite.put("Bookshelf1",new Image(ClassLoader.getSystemResource("library/bookshelf_11.png").toString()));
+		furnitureSprite.put("Bookshelf2",new Image(ClassLoader.getSystemResource("library/bookshelf_12.png").toString()));
+		furnitureSprite.put("Bookshelf3",new Image(ClassLoader.getSystemResource("library/bookshelf_21.png").toString()));
+		furnitureSprite.put("Bookshelf4",new Image(ClassLoader.getSystemResource("library/bookshelf_22.png").toString()));
+		
+		furnitureSprite.put("LeftTableWithLamp",new Image(ClassLoader.getSystemResource("library/leftLamp.png").toString()));
+		furnitureSprite.put("RightTableWithLamp",new Image(ClassLoader.getSystemResource("library/rightLamp.png").toString()));
+		
+		furnitureSprite.put("TableWithBook",new Image(ClassLoader.getSystemResource("library/table.png").toString()));
+		furnitureSprite.put("LeftChair",new Image(ClassLoader.getSystemResource("library/leftChair.png").toString()));
 		
 	}
+
 
 	public void add(IRenderable entity) {
 		System.out.println("add");
