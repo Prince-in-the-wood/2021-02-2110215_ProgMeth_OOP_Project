@@ -46,6 +46,7 @@ public class Garden extends Room{
 		
 		Bed realBed = new Bed("RealBed", 300, 220, 5 );
 		realBed.getAreaForInteract()[0][1] = 240;
+		realBed.setName("bed. Maybe someone sleep inside...");
 		
 		
 		this.getFurniture().add(mirror);

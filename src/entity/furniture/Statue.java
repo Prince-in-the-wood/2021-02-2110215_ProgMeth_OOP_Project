@@ -1,6 +1,7 @@
 package entity.furniture;
 
 import entity.base.Updateable;
+import gui.DialoguePane;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import sharedObject.RenderableHolder;
@@ -77,7 +78,8 @@ public class Statue extends Furniture implements Updateable{
 			
 			int i = ( characterSet.indexOf(this.letterOnStatue) + 1 ) % characterSet.size();
 			this.setLetterOnStatue( characterSet.get(i));
-		
+			DialoguePane.setGameText("This statue is strange!\nI think this is the puzzle\n"
+									+ "but how can I solve this.");
 		}
 	}
 	
