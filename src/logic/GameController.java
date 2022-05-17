@@ -38,14 +38,14 @@ public class GameController {
 	public static void logicUpdate() {
 		
 		if(timer.isTimerOver()) {
-			endGame();
+			endGame(false);
 			return;
 		}
 		
 		if( currentRoom.isGameEnd()) {
 			
 			if( currentRoom instanceof Garden ) {
-				endGame();
+				endGame(true);
 				return;
 			}
 			
@@ -73,12 +73,11 @@ public class GameController {
 		Player.initializePlayer();
 	}
 	
-	public static void endGame() {
+	public static void endGame(boolean isWin) {
 		PlayingScreen.getAnimation().stop();
 		
 		Stage stage = (Stage)(PlayingScreen.getTimerPane().getScene().getWindow());
-		Scene scene = new Scene(new EndingScreen());
-		RenderableHolder.bgMusic.get("MainMenuBGM").play();
+		Scene scene = new Scene(new EndingScreen(isWin));
 		stage.setScene(scene);
 		stage.show();
 		
