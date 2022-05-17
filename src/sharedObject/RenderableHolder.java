@@ -96,7 +96,6 @@ public class RenderableHolder {
 		
 		furnitureSprite.put("Bed",new Image(ClassLoader.getSystemResource("bedroom/Bed.png").toString()));
 		furnitureSprite.put("TableWithLamp",new Image(ClassLoader.getSystemResource("bedroom/TableWithLamp.png").toString()));
-		furnitureSprite.put("TableWithOpenedLamp",new Image(ClassLoader.getSystemResource("bedroom/TableWithOpenedLamp.png").toString()));
 		furnitureSprite.put("TableWithNote",new Image(ClassLoader.getSystemResource("bedroom/TableWithNote.png").toString()));
 		furnitureSprite.put("Window",new Image(ClassLoader.getSystemResource("bedroom/Window.png").toString()));
 		furnitureSprite.put("OpenedWindow",new Image(ClassLoader.getSystemResource("bedroom/OpenedWindow.png").toString()));
