@@ -53,6 +53,7 @@ public class RenderableHolder {
 		loadBedroomResource();
 		loadLivingRoomResource();
 		loadLibraryResource();
+		loadGardenResource();
 	}
 	
 	private static void loadMainMenuResource() {
@@ -141,7 +142,20 @@ public class RenderableHolder {
 		furnitureSprite.put("LeftChair",new Image(ClassLoader.getSystemResource("library/leftChair.png").toString()));
 		
 	}
-
+	
+	private static void loadGardenResource() {
+		background.put("Garden",new Image(ClassLoader.getSystemResource("garden/GardenBG.png").toString()));
+		
+		furnitureSprite.put("Mirror",new Image(ClassLoader.getSystemResource("garden/Mirror.png").toString()));
+		furnitureSprite.put("BehindMirror",new Image(ClassLoader.getSystemResource("garden/BehindMirror.png").toString()));
+		
+		furnitureSprite.put("StatueWithMoon",new Image(ClassLoader.getSystemResource("garden/statue_moon.png").toString()));
+		furnitureSprite.put("StatueWithBook",new Image(ClassLoader.getSystemResource("garden/statue_book.png").toString()));
+		furnitureSprite.put("StatueWithSofa",new Image(ClassLoader.getSystemResource("garden/statue_sofa.png").toString()));
+		furnitureSprite.put("StatueWithLeaf",new Image(ClassLoader.getSystemResource("garden/statue_leaf.png").toString()));
+		
+		furnitureSprite.put("RealBed",new Image(ClassLoader.getSystemResource("garden/MysteryBox.png").toString()));
+	}
 
 	public void add(IRenderable entity) {
 		System.out.println("add");
