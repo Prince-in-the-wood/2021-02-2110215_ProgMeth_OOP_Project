@@ -86,7 +86,7 @@ public class Player {
 		}
 		
 		if( faceDirection == Direction.LEFT) {
-			return endCX == xyFurniture[1][0];
+			return startCX == xyFurniture[1][0];
 		}
 		
 		if( faceDirection == Direction.RIGHT) {
