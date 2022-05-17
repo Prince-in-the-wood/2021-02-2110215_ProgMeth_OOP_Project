@@ -21,6 +21,7 @@ public class Player {
 	private static double yPosition;
 	private static Direction faceDirection;
 	private final static double eachStep = 5;
+	private final static double areaForFoot = 40;
 	
 	public static void initializePlayer() {
 		itemInHand = null;
@@ -81,7 +82,7 @@ public class Player {
 		}
 		
 		if( faceDirection == Direction.UP ) {
-			return startCY == xyFurniture[1][1]; 
+			return startCY <= xyFurniture[1][1]; 
 		}
 		
 		if( faceDirection == Direction.LEFT) {
@@ -128,7 +129,7 @@ public class Player {
 			
 			double[][] xyFurniture = furniture.get(i).getAreaForInteract();
 			
-			if ( startCY >= xyFurniture[1][1] || endCY <= xyFurniture[0][1] ) {
+			if ( startCY + areaForFoot >= xyFurniture[1][1] || endCY <= xyFurniture[0][1] ) {
 				continue;
 			}
 		    if ( endCX <= xyFurniture[0][0] || startCX >= xyFurniture[1][0] ) {
@@ -141,7 +142,7 @@ public class Player {
 			}
 				
 			if( faceDirection == Direction.UP ) {
-				startCY = xyFurniture[1][1];
+				startCY = xyFurniture[1][1] - areaForFoot;
 				break;
 			}	
 			
