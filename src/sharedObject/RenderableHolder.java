@@ -51,6 +51,7 @@ public class RenderableHolder {
 		loadCharacterSpriteAndBody();
 		loadItemResource();
 		loadBedroomResource();
+		loadLivingRoomResource();
 		
 	}
 	
@@ -102,6 +103,27 @@ public class RenderableHolder {
 		furnitureSprite.put("Cupboard",new Image(ClassLoader.getSystemResource("bedroom/Cupboard.png").toString()));
 		furnitureSprite.put("OpenedCupboard",new Image(ClassLoader.getSystemResource("bedroom/OpenedCupboard.png").toString()));
 		furnitureSprite.put("Chair",new Image(ClassLoader.getSystemResource("bedroom/Chair.png").toString()));
+	}
+	
+	private static void loadLivingRoomResource() {
+		background.put("LivingRoom",new Image(ClassLoader.getSystemResource("livingroom/LivingRoomBG.png").toString()));
+		
+		furnitureSprite.put("IvyPic",new Image(ClassLoader.getSystemResource("livingroom/IvyPic.png").toString()));
+		furnitureSprite.put("FamilyPic",new Image(ClassLoader.getSystemResource("livingroom/FamilyPic.png").toString()));
+		furnitureSprite.put("ShieldPic",new Image(ClassLoader.getSystemResource("livingroom/ShieldPic.png").toString()));
+		
+		furnitureSprite.put("OpenedSafe",new Image(ClassLoader.getSystemResource("livingroom/OpenedSafe.png").toString()));
+		furnitureSprite.put("ClosedSafe",new Image(ClassLoader.getSystemResource("livingroom/Safe.png").toString()));
+		
+		furnitureSprite.put("FrontSofa",new Image(ClassLoader.getSystemResource("livingroom/FrontSofa.png").toString()));
+		furnitureSprite.put("CutSofa",new Image(ClassLoader.getSystemResource("livingroom/TearedSofa.png").toString()));
+		furnitureSprite.put("LeftSofa",new Image(ClassLoader.getSystemResource("livingroom/LeftSofa.png").toString()));
+		furnitureSprite.put("RightSofa",new Image(ClassLoader.getSystemResource("livingroom/RightSofa.png").toString()));
+		furnitureSprite.put("SouthSofa",new Image(ClassLoader.getSystemResource("livingroom/SouthSofa.png").toString()));
+		
+		furnitureSprite.put("LongTableWithLamp",new Image(ClassLoader.getSystemResource("livingroom/LongTableWithLamp.png").toString()));
+	
+		
 	}
 
 	public void add(IRenderable entity) {
