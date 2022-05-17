@@ -62,6 +62,7 @@ public class RenderableHolder {
 		background.put("Logo",new Image(ClassLoader.getSystemResource("Logo.png").toString()));
 		background.put("OldPaper",new Image(ClassLoader.getSystemResource("OldPaperBG.jpeg").toString()));
 		background.put("HowToPlay",new Image(ClassLoader.getSystemResource("HowToPlay.png").toString()));
+		background.put("EndingScreen",new Image(ClassLoader.getSystemResource("EndingScreen.png").toString()));
 		
 		bgMusic.put("MainMenuBGM", new AudioClip(ClassLoader.getSystemResource("MemoriesBGM.mp3").toString()));
 		soundFX.put("ButtonClick", new AudioClip(ClassLoader.getSystemResource("ClickSFX.wav").toString()));
