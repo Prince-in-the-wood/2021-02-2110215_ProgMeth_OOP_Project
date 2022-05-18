@@ -39,9 +39,17 @@ public class Garden extends Room{
 		Statue statueWithLeaf = new Statue("StatueWithLeaf", 520, 300, 7, 'I', 'S');
 		
 		statueWithMoon.getAreaForInteract()[0][1] = 200;
+		statueWithMoon.getAreaForInteract()[1][0] = 160;
+		
 		statueWithSofa.getAreaForInteract()[0][1] = 200;
+		statueWithSofa.getAreaForInteract()[1][0] = 600;
+		
 		statueWithBook.getAreaForInteract()[0][1] = 420;
+		statueWithBook.getAreaForInteract()[1][0] = 160;
+		
 		statueWithLeaf.getAreaForInteract()[0][1] = 420;
+		statueWithLeaf.getAreaForInteract()[1][0] = 600;
+		
 		
 		Bed realBed = new Bed("RealBed", 300, 220, 5 );
 		realBed.getAreaForInteract()[0][1] = 240;
