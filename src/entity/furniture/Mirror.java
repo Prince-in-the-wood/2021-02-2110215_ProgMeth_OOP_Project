@@ -34,6 +34,8 @@ public class Mirror extends Container implements Updateable {
 		
 		setImageString("BehindMirror");
 		
+		RenderableHolder.soundFX.get("BreakingGlass").play();
+		
 		for( int i = item.size() - 1 ; i >= 0 ; i-- ) {
 			item.get(i).setIsVisible(true);
 		}
