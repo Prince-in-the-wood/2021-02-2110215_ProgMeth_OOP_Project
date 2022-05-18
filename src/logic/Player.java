@@ -251,10 +251,12 @@ public class Player {
 		
 		if (InputUtility.getKeyPressed(KeyCode.K)) {
 			observe();
+			InputUtility.setKeyPressed(KeyCode.K, false);
 		}
 		
 		if (InputUtility.getKeyPressed(KeyCode.L)) {
 			useItem();
+			InputUtility.setKeyPressed(KeyCode.L, false);
 		}
 		
 		

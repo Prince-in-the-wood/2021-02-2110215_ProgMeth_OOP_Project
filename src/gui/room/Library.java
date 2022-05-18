@@ -48,7 +48,7 @@ public class Library extends Room{
 		Note noteWithDoll = new Note("Note3",  300, 420, 7,
 							"Blahhhhhhhhhhh");
 		noteWithDoll.setImageString("Scilla");
-		Key doorKey = new Key("Key", 300, 420, 7, door ); 
+		Key doorKey = new Key("Key", 300, 420, 8, door ); 
 		
 		tableWithNote.getItem().add(note1);
 		bookshelf2.getItem().add(note2);

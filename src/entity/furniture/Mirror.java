@@ -39,7 +39,7 @@ public class Mirror extends Container implements Updateable {
 		}
 		
 		setIsUpdated(true);
-		
+		DialoguePane.setGameText("My face... Oh, am I Anna? Why…? Why am I here?");
 	}
 	
 	public void observe() {
