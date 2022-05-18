@@ -1,10 +1,8 @@
 package entity.furniture;
 
 import entity.base.Furniture;
-import entity.base.Lockable;
 import entity.base.Openable;
 import gui.DialoguePane;
-import javafx.scene.canvas.GraphicsContext;
 import sharedObject.RenderableHolder;
 
 public class Window extends Furniture implements Openable{

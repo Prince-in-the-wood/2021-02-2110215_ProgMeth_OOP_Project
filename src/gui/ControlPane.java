@@ -1,6 +1,5 @@
 package gui;
 
-import application.Main;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
@@ -8,12 +7,10 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import screen.EndingScreen;
 import screen.MainMenu;
 import screen.PlayingScreen;
 import sharedObject.RenderableHolder;

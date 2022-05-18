@@ -10,9 +10,6 @@ import entity.item.Key;
 import entity.item.Note;
 import entity.item.PocketKnife;
 import gui.DialoguePane;
-import gui.ItemInHandBox;
-import javafx.scene.canvas.GraphicsContext;
-import logic.GameController;
 import logic.Player;
 import sharedObject.RenderableHolder;
 
