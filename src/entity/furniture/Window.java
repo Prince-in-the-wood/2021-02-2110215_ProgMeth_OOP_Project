@@ -22,6 +22,12 @@ public class Window extends Furniture implements Openable{
 		setIsOpened(true);
 		setImageString("OpenedWindow");
 	}
+	
+	@Override
+	public void close() {
+		setImageString(this.getName());
+		setIsOpened(false);
+	}
 
 	@Override
 	public boolean isOpened() {
@@ -32,6 +38,8 @@ public class Window extends Furniture implements Openable{
 	public void observe() {
 		if( !this.isOpened() )
 			this.open();
+		else
+			this.close();
 		
 		DialoguePane.setGameText("Why everything is silent?");
 	}

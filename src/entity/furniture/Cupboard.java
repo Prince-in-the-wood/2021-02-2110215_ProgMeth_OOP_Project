@@ -44,6 +44,18 @@ public class Cupboard extends Container implements Lockable, Openable{
 			}
 		}
 	}
+	
+	@Override
+	public void close() {
+		this.setIsOpened(false);
+		this.setImageString(this.getName());
+
+		if( item.size() > 0 ) {
+			for( int i = item.size() - 1 ; i >= 0 ; i-- ) 
+				item.get(i).setIsVisible(false);
+		}
+	}
+
 
 	@Override
 	public boolean isOpened() {
@@ -80,7 +92,11 @@ public class Cupboard extends Container implements Lockable, Openable{
 	
 	@Override
 	public void observe() {
-		
+		if( isOpened() && item.size() <= 1 ) {
+			close();
+			return;
+		}
+
 		open();
 		
 		if( isLocked() )
