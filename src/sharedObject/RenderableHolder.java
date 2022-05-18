@@ -68,12 +68,21 @@ public class RenderableHolder {
 		bgMusic.put("PlayingScreenBGM", new AudioClip(ClassLoader.getSystemResource("playingScreenBGM.mp3").toString()));
 		
 		soundFX.put("ButtonClick", new AudioClip(ClassLoader.getSystemResource("ClickSFX.wav").toString()));
+		
+		soundFX.put("PickItem", new AudioClip(ClassLoader.getSystemResource("ClickSFX.wav").toString()));
+		soundFX.get("PickItem").setVolume(0.5);
+		
 		soundFX.put("BreakingGlass", new AudioClip(ClassLoader.getSystemResource("breakingGlassSFX.mp3").toString()));
+		soundFX.put("CloseCupboard", new AudioClip(ClassLoader.getSystemResource("CloseSFX.mp3").toString()));
+		soundFX.put("OpenCupboard", new AudioClip(ClassLoader.getSystemResource("OpenSFX.mp3").toString()));
 		soundFX.put("Lock", new AudioClip(ClassLoader.getSystemResource("lockSFX.mp3").toString()));
-		soundFX.put("Unlock", new AudioClip(ClassLoader.getSystemResource("unlock.mp3").toString()));
-		soundFX.put("Open", new AudioClip(ClassLoader.getSystemResource("OpenSFX.mp3").toString()));
-		soundFX.put("Close", new AudioClip(ClassLoader.getSystemResource("CloseSFX.mp3").toString()));
-		soundFX.put("PickItUp", new AudioClip(ClassLoader.getSystemResource("pickItem.mp3").toString()));
+		soundFX.put("KeyUsing", new AudioClip(ClassLoader.getSystemResource("keyUsing.wav").toString()));
+		
+		soundFX.put("CutSofa", new AudioClip(ClassLoader.getSystemResource("CutSofa.wav").toString()));
+		soundFX.get("CutSofa").setVolume(0.5);
+		
+		soundFX.put("OpenWindow", new AudioClip(ClassLoader.getSystemResource("OpenWindow.wav").toString()));
+		soundFX.put("Tab", new AudioClip(ClassLoader.getSystemResource("tab.wav").toString()));
 		
 		
 		juiceICTFont = Font.loadFont( ClassLoader.getSystemResource("JUICE.ttf").toString(), 45 );

@@ -40,7 +40,7 @@ public class Cupboard extends Container implements Lockable, Openable{
 			this.setIsOpened(true);
 			this.setImageString("OpenedCupboard");
 
-			RenderableHolder.soundFX.get("Open").play();	
+			RenderableHolder.soundFX.get("OpenCupboard").play();	
 			
 			if( item.size() > 0 ) {
 				for( int i = item.size() - 1 ; i >= 0 ; i-- ) 
@@ -53,7 +53,7 @@ public class Cupboard extends Container implements Lockable, Openable{
 	public void close() {
 		this.setIsOpened(false);
 		this.setImageString(this.getName());
-		RenderableHolder.soundFX.get("Close").play();
+		RenderableHolder.soundFX.get("CloseCupboard").play();
 		if( item.size() > 0 ) {
 			for( int i = item.size() - 1 ; i >= 0 ; i-- ) 
 				item.get(i).setIsVisible(false);

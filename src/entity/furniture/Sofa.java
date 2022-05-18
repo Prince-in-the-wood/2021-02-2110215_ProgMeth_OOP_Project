@@ -35,7 +35,7 @@ public class Sofa extends Furniture implements Cuttable{
 		
 		this.setIsCut(true);
 		this.setImageString("CutSofa");
-		
+		RenderableHolder.soundFX.get("CutSofa").play();
 		for( int i = thingBehind.size() - 1 ; i >= 0 ; i-- ) {
 			thingBehind.get(i).setIsVisible(true);
 		}

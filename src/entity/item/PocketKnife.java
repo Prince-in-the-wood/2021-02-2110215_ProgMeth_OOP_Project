@@ -28,6 +28,7 @@ public class PocketKnife extends Item implements Pickable{
 		setIsPicked(true);
 		super.setIsVisible(false);
 		
+		RenderableHolder.soundFX.get("PickItem").play();
 	}
 
 	@Override
@@ -40,9 +41,6 @@ public class PocketKnife extends Item implements Pickable{
 			ItemInHandBox.deleteImageInBox();
 			Player.setItemInHand(null);
 			setIsPicked(false);
-			
-			RenderableHolder.soundFX.get("PickItUp").setVolume(0.3);
-			RenderableHolder.soundFX.get("PickItUp").play();
 			
 			return true;
 		}
