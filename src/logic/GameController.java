@@ -7,6 +7,7 @@ import gui.room.Library;
 import gui.room.LivingRoom;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import screen.EndingScreen;
 import screen.PlayingScreen;
@@ -21,7 +22,7 @@ public class GameController {
 		Player.initializePlayer();
 		RenderableHolder.getInstance().getEntities().clear();
 		currentRoom = new Bedroom();
-		timer = new Timer(5, 0, 0);
+		timer = new Timer(3, 0, 0);
 	}
 	
 	public static Room getCurrentRoom() {
@@ -50,10 +51,11 @@ public class GameController {
 			}
 			
 			setCurrentRoom();
-			timer = new Timer(5, 0, 0);
+			timer = new Timer(3, 0, 0);
 			return;
 		}
-		
+		timer.decrementTimer(2);
+		PlayingScreen.getTimerPane().setTimer(timer.toString());
 		Player.logicUpdate();
 	}
 	
