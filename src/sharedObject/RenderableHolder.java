@@ -73,6 +73,7 @@ public class RenderableHolder {
 		soundFX.put("Unlock", new AudioClip(ClassLoader.getSystemResource("unlock.mp3").toString()));
 		soundFX.put("Open", new AudioClip(ClassLoader.getSystemResource("OpenSFX.mp3").toString()));
 		soundFX.put("Close", new AudioClip(ClassLoader.getSystemResource("CloseSFX.mp3").toString()));
+		soundFX.put("PickItUp", new AudioClip(ClassLoader.getSystemResource("pickItem.mp3").toString()));
 		
 		
 		juiceICTFont = Font.loadFont( ClassLoader.getSystemResource("JUICE.ttf").toString(), 45 );
