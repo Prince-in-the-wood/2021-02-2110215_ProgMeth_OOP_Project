@@ -124,7 +124,7 @@ public class GameController {
 			Stage stage = (Stage)(PlayingScreen.getTimerPane().getScene().getWindow());
 			Scene scene = new Scene(endingScreen);
 			stage.setScene(scene);
-			
+			endingScreen.setOpacity(0);
 			
 			FadeTransition ft2 = new FadeTransition();
 			ft2.setDuration(Duration.millis(2000));
