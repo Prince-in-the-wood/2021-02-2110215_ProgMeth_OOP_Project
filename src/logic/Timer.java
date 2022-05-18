@@ -51,4 +51,13 @@ public class Timer {
 	}
 
 
+	public int getDuration() {
+		return ((minute * 60) + seconds )*1000 + ms;
+	}
+	
+	public static int getDuration(int minute, int seconds, int ms ) {
+		return ((minute * 60) + seconds )*1000 + ms;
+	}
+
+
 }

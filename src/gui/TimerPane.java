@@ -29,8 +29,8 @@ public class TimerPane extends StackPane{
 		return timer;
 	}
 
-	public void setTimer(Text timer) {
-		this.timer = timer;
+	public void setTimer(String timer) {
+		this.timer.setText(timer);
 	}
 
 }
