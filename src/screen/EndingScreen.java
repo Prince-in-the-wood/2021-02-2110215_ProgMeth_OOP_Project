@@ -63,7 +63,8 @@ public class EndingScreen extends VBox{
 		Text endingText;
 		
 		if( isWin ) {
-			endingText = new Text("In the end,\nAnna found herself is in her dream.\n"
+			endingText = new Text("In the end,\n"
+								+ "Anna found herself is in her dream.\n"
 								+ "But is she really dreaming?\n"
 								+ "Or it is the world she create?\n"
 								+ "\n\n\nTo be continue...");
