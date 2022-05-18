@@ -25,8 +25,7 @@ public class Garden extends Room{
 		
 		Mirror mirror = new Mirror("Mirror", 320, 20, 1);
 		Note noteWithDoll = new Note("Note1",  340, 60, 2,
-							"“Oh, am I Anna? Why…? Why am I here?”\n"
-							+"“To our beloved daughter, Anna…\n"
+							"“To our beloved daughter, Anna…\n"
 							+ "We hope you will be with us. Today is your eleventh birthday.\n"
 							+ "I have a present for you, Snowdrop I wish you love it\n"
 							+ "Your mom”");
