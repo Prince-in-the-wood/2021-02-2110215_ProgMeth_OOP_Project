@@ -37,8 +37,8 @@ public class Library extends Room{
 		bookshelf3.getAreaForInteract()[0][1] = 440;
 		bookshelf4.getAreaForInteract()[0][1] = 440;
 		
-		TableWithNote tableWithNote = new TableWithNote("TableWithBook", 0, 340, 8 );
-		Chair chair = new Chair("LeftChair", 60, 420, 9 );
+		TableWithNote tableWithNote = new TableWithNote("TableWithBook", 0, 340, 9 );
+		Chair chair = new Chair("LeftChair", 60, 420, 6 );
 		
 		Note note1 = new Note("Note1",  0, 340, 9,
 							"“Doubt is the clue to make sure.\n"
