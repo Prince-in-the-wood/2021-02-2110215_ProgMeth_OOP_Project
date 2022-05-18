@@ -60,7 +60,7 @@ public class RenderableHolder {
 	
 		background.put("MainMenu",new Image(ClassLoader.getSystemResource("MainMenu.png").toString()));
 		background.put("Logo",new Image(ClassLoader.getSystemResource("Logo.png").toString()));
-		background.put("OldPaper",new Image(ClassLoader.getSystemResource("OldPaperBG.jpeg").toString()));
+		background.put("OldPaper",new Image(ClassLoader.getSystemResource("OldPaperBG.png").toString()));
 		background.put("HowToPlay",new Image(ClassLoader.getSystemResource("HowToPlay.png").toString()));
 		background.put("EndingScreen",new Image(ClassLoader.getSystemResource("EndingScreen.png").toString()));
 		
