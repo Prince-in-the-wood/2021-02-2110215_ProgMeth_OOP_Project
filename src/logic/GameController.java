@@ -77,6 +77,7 @@ public class GameController {
 	
 	public static void endGame(boolean isWin) {
 		PlayingScreen.getAnimation().stop();
+		RenderableHolder.bgMusic.get("PlayingScreenBGM").stop();
 		
 		Stage stage = (Stage)(PlayingScreen.getTimerPane().getScene().getWindow());
 		Scene scene = new Scene(new EndingScreen(isWin));

@@ -71,6 +71,9 @@ public class PlayingScreen extends VBox{
 
 		this.addListerner();
 		
+		RenderableHolder.bgMusic.get("PlayingScreenBGM").setVolume(0.2);
+		RenderableHolder.bgMusic.get("PlayingScreenBGM").play();
+		
 		animation = new AnimationTimer() {
 			public void handle(long now) {
 				GameController.getCurrentRoom().paintComponent();
