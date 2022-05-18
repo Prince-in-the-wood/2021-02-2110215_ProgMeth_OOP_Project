@@ -41,14 +41,24 @@ public class Library extends Room{
 		Chair chair = new Chair("LeftChair", 60, 420, 9 );
 		
 		Note note1 = new Note("Note1",  0, 340, 9,
-							"Blahhhhhhhhhhh");
+							"“Doubt is the clue to make sure.\n"
+							+ "Make it simply. Sometime the answer is nearer than you think”\n"
+							+ "If I doubt about myself... So, I should begin with myself?");
 		Note note2 = new Note("Note2",  420, 300, 5,
-							"Blahhhhhhhhhhh2");
+							"“This is really large library. I love to read here\n"
+							+ "My mom and dad build it for me...\n"
+							+ "Although, Sometime I think everyone forget me\n"
+							+ "I stay here since the morning but no one call me for lunch”\n"
+							+ "Forget? Is she their child?");
 		
-		Note noteWithDoll = new Note("Note3",  300, 420, 7,
-							"Blahhhhhhhhhhh");
+		Note noteWithDoll = new Note("Note3",  280, 420, 7,
+							"“Scilla, I first met her in this library. My mom gave it to me.\n"
+							+ "She said Scilla is beautiful and meaningful. Constancy…\n"
+							+ "I think my mom wants me to still believe in my health.\n"
+							+ "Thanks, mom. I always love your gifts.”\n"
+							+ "Believe in her health? Is she sick?\n");
 		noteWithDoll.setImageString("Scilla");
-		Key doorKey = new Key("Key", 300, 420, 8, door ); 
+		Key doorKey = new Key("Key", 300, 440, 8, door ); 
 		
 		tableWithNote.getItem().add(note1);
 		bookshelf2.getItem().add(note2);

@@ -23,12 +23,13 @@ public class Bedroom extends Room{
 		cupboardArea[0][1] = 180;
 		cupboard.setAreaForInteract(cupboardArea);
 		Note noteWithDoll = new Note("Note1", 100, 180, 2,
-							"Yeah, you found Melody!\n"
-							+ "I’m glad to invite you to visit my new room!\n"
+							"“Yeah, you found Melody! She won't keep you in the silence.\n"
+							+ "Of course, I’m glad to invite you to visit my new room!\n"
 							+ "It is bigger than the old one.\n"
-							+ "Is it great, right?”");
+							+ "Is it great, right?”\n"
+							+ "Her new room…? Maybe this place is Her new home…?");
 		noteWithDoll.setImageString("Melody");
-		Key doorKey = new Key("Key", 120, 200, 3, door); // It's should be door instead
+		Key doorKey = new Key("Key", 140, 200, 3, door); // It's should be door instead
 		cupboard.getItem().add(noteWithDoll);
 		cupboard.getItem().add(doorKey);
 		
@@ -51,7 +52,7 @@ public class Bedroom extends Room{
 		
 		TableWithNote tableWithNote = new TableWithNote("TableWithNote", 40 ,440 , 7 );
 		Note note2 = new Note("Note2", 40, 440, 8,
-							"April 1st, 2002\n"
+							"“April 1st, 2002\n"
 							+ "I like to play hide and seek.\n"
 							+ "So, I hide all my dolls in my house.\n"
 							+ "I think everyone would love to."

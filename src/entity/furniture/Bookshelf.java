@@ -56,7 +56,7 @@ public class Bookshelf extends Container{
 				}
 			}
 		}else {
-			DialoguePane.setGameText("There is a lot of books here, "
+			DialoguePane.setGameText("There is a lot of books here,\n"
 									 + "I would love to read if I have time.");
 		}
 		

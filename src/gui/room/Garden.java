@@ -28,7 +28,8 @@ public class Garden extends Room{
 							"“To our beloved daughter, Anna…\n"
 							+ "We hope you will be with us. Today is your eleventh birthday.\n"
 							+ "I have a present for you, Snowdrop I wish you love it\n"
-							+ "Your mom”");
+							+ "Your mom”\n"
+							+ "Snowdrop... That's flower...I understand now, mom");
 		noteWithDoll.setImageString("Snowdrop");
 		mirror.getItem().add(noteWithDoll);
 		mirror.getAreaForInteract()[1][1] = 180;
