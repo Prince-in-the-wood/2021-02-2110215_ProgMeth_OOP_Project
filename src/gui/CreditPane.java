@@ -40,7 +40,7 @@ public class CreditPane extends VBox {
 		
 	}
 	
-	public void initializeHeaderText() {
+	private void initializeHeaderText() {
 
 		header = new Text("Credit");
 		
@@ -53,7 +53,7 @@ public class CreditPane extends VBox {
 		header.setTextAlignment(TextAlignment.CENTER);
 	}
 	
-	public void initializeBodyText() {
+	private void initializeBodyText() {
 		
 		body = new Text("Designed and Created by\nTongRod99\n\nSupported by\nOur beloved family");
 		body.setFont(RenderableHolder.couriterryFont);

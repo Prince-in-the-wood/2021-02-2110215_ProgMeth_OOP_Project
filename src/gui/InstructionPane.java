@@ -40,7 +40,7 @@ public class InstructionPane extends VBox {
 		this.getChildren().addAll(header, howToPlayPic );
 	}
 	
-	public void initializeHeaderText() {
+	private void initializeHeaderText() {
 
 		header = new Text("How to play");
 		
@@ -53,7 +53,7 @@ public class InstructionPane extends VBox {
 		header.setTextAlignment(TextAlignment.CENTER);
 	}
 	
-	public void initializeHowToPlayPic() {
+	private void initializeHowToPlayPic() {
 		howToPlayPic = new ImageView(RenderableHolder.background.get("HowToPlay"));
 		howToPlayPic.setFitWidth(400);
 		howToPlayPic.setPreserveRatio(true);

@@ -83,7 +83,7 @@ public class PlayingScreen extends VBox{
 		animation.start();
 	}
 	
-	public void initializeMenuButton() {
+	private void initializeMenuButton() {
 		
 		menuButton = new Button("MENU");
 		
@@ -120,7 +120,7 @@ public class PlayingScreen extends VBox{
 		});
 	}
 	
-	public VBox initializeSidePane() {
+	private VBox initializeSidePane() {
 		
 		initializeMenuButton();
 		character = new CharacterPane();
@@ -139,7 +139,7 @@ public class PlayingScreen extends VBox{
 		
 	}
 	
-	public void initializeRoomPane(){
+	private void initializeRoomPane(){
 		
 		room = new Pane();
 		
@@ -150,7 +150,7 @@ public class PlayingScreen extends VBox{
 		
 	}
 	
-	public void addListerner() {
+	private void addListerner() {
 		this.setOnKeyPressed((KeyEvent event) -> {
 			InputUtility.setKeyPressed(event.getCode(), true);
 		});
@@ -174,7 +174,6 @@ public class PlayingScreen extends VBox{
 	public static AnimationTimer getAnimation() {
 		return animation;
 	}
-	
 	
 	public static void setCharacterPane() {
 		character.getChildren().clear();
