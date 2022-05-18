@@ -41,8 +41,8 @@ public class EndingScreen extends VBox{
 		this.setSpacing(0);
 		this.setAlignment(Pos.TOP_CENTER);
 		
-		this.setMaxSize(1120, 760);
-		this.setMinSize(1120, 760);
+		this.setHeight(760);
+		this.setWidth(1120);
 
 		BackgroundSize bgSize = new BackgroundSize(1120,760,false,false,false,false);
 		this.setBackground(new Background(new BackgroundImage(RenderableHolder.background.get("EndingScreen"),
