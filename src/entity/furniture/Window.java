@@ -18,14 +18,14 @@ public class Window extends Furniture implements Openable{
 
 	@Override
 	public void open() {
-		RenderableHolder.soundFX.get("Open").play();
+		RenderableHolder.soundFX.get("OpenWindow").play();
 		setIsOpened(true);
 		setImageString("OpenedWindow");
 	}
 	
 	@Override
 	public void close() {
-		RenderableHolder.soundFX.get("Open").play();
+		RenderableHolder.soundFX.get("OpenWindow").play();
 		setImageString(this.getName());
 		setIsOpened(false);
 	}

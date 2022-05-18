@@ -8,6 +8,7 @@ import entity.item.Note;
 import entity.item.PocketKnife;
 import gui.DialoguePane;
 import logic.Player;
+import sharedObject.RenderableHolder;
 
 public class PictureWithItem extends Picture{
 	
@@ -41,10 +42,12 @@ public class PictureWithItem extends Picture{
 			setIsReveal(true);
 			this.setImageString("ClosedSafe");
 			DialoguePane.setGameText("There is a safe behind.");
+			RenderableHolder.soundFX.get("Tab").play();
 			
 		}else if( isLocked ) {
 			
 			DialoguePane.setGameText("It's locked");
+			RenderableHolder.soundFX.get("Lock").play();
 			
 		}else {
 			

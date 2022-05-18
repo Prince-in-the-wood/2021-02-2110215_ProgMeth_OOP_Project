@@ -8,6 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import logic.GameController;
 import logic.Player;
+import sharedObject.RenderableHolder;
 
 public class Door extends Furniture{
 
@@ -29,6 +30,7 @@ public class Door extends Furniture{
 	@Override
 	public void observe() {
 		DialoguePane.setGameText("The door is locked! I must find the key");
+		RenderableHolder.soundFX.get("Lock").play();
 	}
 	
 	@Override

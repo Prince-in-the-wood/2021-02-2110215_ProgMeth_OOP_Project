@@ -26,6 +26,8 @@ public class Key extends Item implements Pickable{
 		setIsPicked(true);
 		super.setIsVisible(false);
 		
+		RenderableHolder.soundFX.get("PickItem").play();
+		
 	}
 
 	@Override
@@ -39,8 +41,7 @@ public class Key extends Item implements Pickable{
 			Player.setItemInHand(null);
 			setIsPicked(false);
 
-			RenderableHolder.soundFX.get("PickItUp").setVolume(0.3);
-			RenderableHolder.soundFX.get("PickItUp").play();
+			RenderableHolder.soundFX.get("KeyUsing").play();
 			
 			return true;
 		}

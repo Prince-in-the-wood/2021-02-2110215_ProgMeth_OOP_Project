@@ -80,6 +80,7 @@ public class Statue extends Furniture implements Updateable{
 			this.setLetterOnStatue( characterSet.get(i));
 			DialoguePane.setGameText("This statue is strange!\nI think this is the puzzle\n"
 									+ "but how can I solve this.");
+			RenderableHolder.soundFX.get("Tab").play();
 		}
 	}
 	

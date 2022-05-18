@@ -56,11 +56,11 @@ public class LivingRoom extends Room{
 		Door door = new Door("Door", 680, 420, -1);
 		
 		Note noteAtIvy = new Note("Note1",  80, 20, 1,
-								"的vy, Lasting forever能r\n"
-								+ "There is some note here\r\n"
+								"的vy, Lasting forever能n"
+								+ "There is some note here\n"
 								+ "的n this house, it痴 full of secrets. Everything keeps it inside.\n"
 								+ "Tear and peer能n"
-								+ "It is a pocketknife behind\r\n");
+								+ "It is a pocketknife behind\n");
 		PocketKnife pocketKnife = new PocketKnife( "PocketKnife" , 80, 20, 1, bigSofa1 );
 		ivyPic.getItemBehind().add(noteAtIvy);
 		ivyPic.getItemBehind().add(pocketKnife);
@@ -73,9 +73,11 @@ public class LivingRoom extends Room{
 		bigSofa1.getThingBehind().add(safeKey);
 		
 		Note noteWithDoll = new Note("Note3",  600, 60, 2,
-							"的vy, the green symbol of eternal life!能r\n"
-							+ "的 feel I have heard this story before�\n"
-							+ "But why? Maybe, my brain plays a trick on me能n");
+							"的vy, the symbol of eternal life! That痴 why I named her Ivy.\n"
+							+ "Cause we will be along ever after! This room is full of memory\n"
+							+ "mom and dad were here and play with me\n"
+							+ "Keep Ivy here, and wish it would be the same forever!能n"
+							+ "I feel I have heard this story before�\n");
 		noteWithDoll.setImageString("Ivy");
 		Key doorKey = new Key("Key", 620, 80, 3, door );
 		shieldPic.getItemBehind().add(noteWithDoll);
