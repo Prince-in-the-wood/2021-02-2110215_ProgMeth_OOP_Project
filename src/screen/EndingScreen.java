@@ -25,7 +25,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import sharedObject.RenderableHolder;
 
-public class EndingScreen extends VBox{
+public class EndingScreen extends StackPane{
 
 	private StackPane endingTextPane;
 	private Button menuButton;
@@ -36,10 +36,17 @@ public class EndingScreen extends VBox{
 		initializeEndingTextPane(isWin);
 		initializeMenuButtonPane();
 		
-		this.getChildren().addAll(endingTextPane, menuButton );
-		this.setPadding(new Insets(60));
-		this.setSpacing(0);
-		this.setAlignment(Pos.TOP_CENTER);
+		VBox box = new VBox();
+		box.setMinWidth(1120);
+		box.setMaxWidth(1120);
+		
+		box.getChildren().addAll(endingTextPane, menuButton );
+		box.setSpacing(0);
+		box.setPadding(new Insets(60));
+		box.setAlignment(Pos.TOP_CENTER);
+		
+		this.getChildren().add(box);
+		this.setAlignment(Pos.CENTER_LEFT);
 		
 		this.setHeight(760);
 		this.setWidth(1120);
