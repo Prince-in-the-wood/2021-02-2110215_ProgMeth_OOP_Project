@@ -12,6 +12,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import logic.GameController;
 import logic.Player;
+import logic.Timer;
 import sharedObject.IRenderable;
 import sharedObject.RenderableHolder;
 
@@ -69,7 +70,23 @@ public abstract class Room extends Canvas{
 		
 		if( !isCharacterDraw )
 			Player.draw(gc);
-
+		
+		fade();
+		
+	}
+	
+	public void fade() {
+		GraphicsContext gc = this.getGraphicsContext2D();
+		
+		gc.setFill(Color.BLACK);
+		
+		double currentTime = GameController.getTimer().getDuration();
+		double fullTime = Timer.getDuration(3, 0, 0);
+		double opacity = (fullTime - currentTime)/fullTime;
+		
+		gc.setGlobalAlpha(opacity);
+		gc.fillRect( 0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
+		gc.setGlobalAlpha(1.0);
 	}
 
 	
