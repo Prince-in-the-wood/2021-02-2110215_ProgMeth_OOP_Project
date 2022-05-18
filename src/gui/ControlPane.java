@@ -1,6 +1,8 @@
 package gui;
 
 import application.Main;
+import javafx.animation.FadeTransition;
+import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -10,6 +12,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import screen.EndingScreen;
 import screen.MainMenu;
 import screen.PlayingScreen;
 import sharedObject.RenderableHolder;
@@ -56,11 +60,30 @@ public class ControlPane extends VBox{
 			RenderableHolder.soundFX.get("ButtonClick").play();
 			
 			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-			Scene scene = new Scene(new PlayingScreen());
+			makeFadeTransition(stage);
+		} );
+	}
+	
+	private void makeFadeTransition(Stage stage){
+		
+		FadeTransition ft1 = new FadeTransition();
+		ft1.setDuration(Duration.millis(1000));
+		ft1.setNode(this.getParent());
+		ft1.setFromValue(1);
+		ft1.setToValue(0);
+		
+		ft1.setOnFinished((ActionEvent event) -> {		
+			
 			RenderableHolder.bgMusic.get("MainMenuBGM").stop();
+			PlayingScreen playingScreen = new PlayingScreen();
+			Scene scene = new Scene(playingScreen);
 			stage.setScene(scene);
 			stage.show();
-		} );
+			
+		});
+		
+		ft1.play();
+
 	}
 	
 	public void initializeInstructionButton() {
