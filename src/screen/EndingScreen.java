@@ -41,6 +41,8 @@ public class EndingScreen extends VBox{
 		this.setSpacing(0);
 		this.setAlignment(Pos.TOP_CENTER);
 		
+		this.setMaxSize(1120, 760);
+		this.setMinSize(1120, 760);
 
 		BackgroundSize bgSize = new BackgroundSize(1120,760,false,false,false,false);
 		this.setBackground(new Background(new BackgroundImage(RenderableHolder.background.get("EndingScreen"),
@@ -61,7 +63,8 @@ public class EndingScreen extends VBox{
 		Text endingText;
 		
 		if( isWin ) {
-			endingText = new Text("In the end,\nAnna found herself is in her dream.\n"
+			endingText = new Text("In the end,\n"
+								+ "Anna found herself is in her dream.\n"
 								+ "But is she really dreaming?\n"
 								+ "Or it is the world she create?\n"
 								+ "\n\n\nTo be continue...");

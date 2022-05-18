@@ -65,7 +65,16 @@ public class RenderableHolder {
 		background.put("EndingScreen",new Image(ClassLoader.getSystemResource("EndingScreen.png").toString()));
 		
 		bgMusic.put("MainMenuBGM", new AudioClip(ClassLoader.getSystemResource("MemoriesBGM.mp3").toString()));
+		bgMusic.put("PlayingScreenBGM", new AudioClip(ClassLoader.getSystemResource("playingScreenBGM.mp3").toString()));
+		
 		soundFX.put("ButtonClick", new AudioClip(ClassLoader.getSystemResource("ClickSFX.wav").toString()));
+		soundFX.put("BreakingGlass", new AudioClip(ClassLoader.getSystemResource("breakingGlassSFX.mp3").toString()));
+		soundFX.put("Lock", new AudioClip(ClassLoader.getSystemResource("lockSFX.mp3").toString()));
+		soundFX.put("Unlock", new AudioClip(ClassLoader.getSystemResource("unlock.mp3").toString()));
+		soundFX.put("Open", new AudioClip(ClassLoader.getSystemResource("OpenSFX.mp3").toString()));
+		soundFX.put("Close", new AudioClip(ClassLoader.getSystemResource("CloseSFX.mp3").toString()));
+		soundFX.put("PickItUp", new AudioClip(ClassLoader.getSystemResource("pickItem.mp3").toString()));
+		
 		
 		juiceICTFont = Font.loadFont( ClassLoader.getSystemResource("JUICE.ttf").toString(), 45 );
 		couriterryFont = Font.loadFont( ClassLoader.getSystemResource("AatrixCOURITER.ttf").toString(), 20 );

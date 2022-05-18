@@ -71,10 +71,13 @@ public class PlayingScreen extends VBox{
 
 		this.addListerner();
 		
+		RenderableHolder.bgMusic.get("PlayingScreenBGM").setVolume(0.2);
+		RenderableHolder.bgMusic.get("PlayingScreenBGM").play();
+		
 		animation = new AnimationTimer() {
 			public void handle(long now) {
-				GameController.getCurrentRoom().paintComponent();
 				GameController.logicUpdate();
+				GameController.getCurrentRoom().paintComponent();
 			}
 		};
 		animation.start();
@@ -111,7 +114,7 @@ public class PlayingScreen extends VBox{
 			
 			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			Scene scene = new Scene(new MainMenu());
-//			RenderableHolder.bgMusic.get("MainMenuBGM").stop();
+			RenderableHolder.bgMusic.get("PlayingScreenBGM").stop();
 			stage.setScene(scene);
 			stage.show();
 		});
@@ -176,6 +179,10 @@ public class PlayingScreen extends VBox{
 	public static void setCharacterPane() {
 		character.getChildren().clear();
 		character.setCharacterPane();
+	}
+
+	public static Pane getRoomPane() {
+		return room;
 	}
 
 }
