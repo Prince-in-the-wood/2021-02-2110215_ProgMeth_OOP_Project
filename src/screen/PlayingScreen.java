@@ -114,7 +114,7 @@ public class PlayingScreen extends VBox{
 			
 			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			Scene scene = new Scene(new MainMenu());
-//			RenderableHolder.bgMusic.get("MainMenuBGM").stop();
+			RenderableHolder.bgMusic.get("PlayingScreenBGM").stop();
 			stage.setScene(scene);
 			stage.show();
 		});
