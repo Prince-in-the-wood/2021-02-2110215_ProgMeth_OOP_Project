@@ -17,12 +17,10 @@ public class Cupboard extends Container implements Lockable, Openable{
 
 	private boolean isLocked;
 	private boolean isOpened;
-	private ArrayList<Item> item;
 	
 	public Cupboard(String name, int xPosition, int yPosition, int z ) {
 		super(name, xPosition, yPosition, z);
 		
-		item  = new ArrayList<Item>();
 		setIsLocked(true);
 		setIsOpened(false);
 	}
@@ -39,6 +37,8 @@ public class Cupboard extends Container implements Lockable, Openable{
 
 			RenderableHolder.soundFX.get("OpenCupboard").play();	
 			
+			ArrayList<Item> item = this.getItem();
+			
 			if( item.size() > 0 ) {
 				for( int i = item.size() - 1 ; i >= 0 ; i-- ) 
 					item.get(i).setIsVisible(true);
@@ -51,6 +51,9 @@ public class Cupboard extends Container implements Lockable, Openable{
 		this.setIsOpened(false);
 		this.setImageString(this.getName());
 		RenderableHolder.soundFX.get("CloseCupboard").play();
+		
+		ArrayList<Item> item = this.getItem();
+		
 		if( item.size() > 0 ) {
 			for( int i = item.size() - 1 ; i >= 0 ; i-- ) 
 				item.get(i).setIsVisible(false);
@@ -93,6 +96,9 @@ public class Cupboard extends Container implements Lockable, Openable{
 	
 	@Override
 	public void observe() {
+		
+		ArrayList<Item> item = this.getItem();
+		
 		if( isOpened() && item.size() <= 1 ) {
 			close();
 			return;
@@ -137,16 +143,6 @@ public class Cupboard extends Container implements Lockable, Openable{
 	public void setIsOpened(boolean isOpened) {
 		this.isOpened = isOpened;
 	}
-
-
-	public ArrayList<Item> getItem() {
-		return item;
-	}
-
-	public void setItem(ArrayList<Item> item) {
-		this.item = item;
-	}
-	
 	
 
 }
