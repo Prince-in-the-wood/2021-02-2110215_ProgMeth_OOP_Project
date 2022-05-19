@@ -62,7 +62,7 @@ public class RenderableHolder {
 		background.put("Logo",new Image(ClassLoader.getSystemResource("Logo.png").toString()));
 		background.put("OldPaper",new Image(ClassLoader.getSystemResource("OldPaperBG.png").toString()));
 		background.put("HowToPlay",new Image(ClassLoader.getSystemResource("HowToPlay.png").toString()));
-		background.put("EndingScreen",new Image(ClassLoader.getSystemResource("EndingScreen.png").toString()));
+		background.put("EndingScreen",new Image(ClassLoader.getSystemResource("EndingScreen.PNG").toString()));
 		
 		bgMusic.put("MainMenuBGM", new AudioClip(ClassLoader.getSystemResource("MemoriesBGM.mp3").toString()));
 		bgMusic.put("PlayingScreenBGM", new AudioClip(ClassLoader.getSystemResource("playingScreenBGM.mp3").toString()));
@@ -85,16 +85,16 @@ public class RenderableHolder {
 		soundFX.put("Tab", new AudioClip(ClassLoader.getSystemResource("tab.wav").toString()));
 		
 		
-		juiceICTFont = Font.loadFont( ClassLoader.getSystemResource("JUICE.ttf").toString(), 45 );
+		juiceICTFont = Font.loadFont( ClassLoader.getSystemResource("JUICE.TTF").toString(), 45 );
 		couriterryFont = Font.loadFont( ClassLoader.getSystemResource("AatrixCOURITER.ttf").toString(), 20 );
 	
 	}
 	
 	private static void loadCharacterSpriteAndBody() {
 
-		characterBody.put(Emotion.NORMAL, new Image(ClassLoader.getSystemResource("Character_Normal.png").toString()));
-		characterBody.put(Emotion.WORRIED, new Image(ClassLoader.getSystemResource("Character_Worried.png").toString()));
-		characterBody.put(Emotion.SHOCK, new Image(ClassLoader.getSystemResource("Character_Shock.png").toString()));
+		characterBody.put(Emotion.NORMAL, new Image(ClassLoader.getSystemResource("Character_Normal.PNG").toString()));
+		characterBody.put(Emotion.WORRIED, new Image(ClassLoader.getSystemResource("Character_Worried.PNG").toString()));
+		characterBody.put(Emotion.SHOCK, new Image(ClassLoader.getSystemResource("Character_Shock.PNG").toString()));
 		
 		characterSprite.put(Direction.DOWN, new Image(ClassLoader.getSystemResource("character-sprite/character_sprite_front.png").toString()));
 		characterSprite.put(Direction.UP, new Image(ClassLoader.getSystemResource("character-sprite/character_sprite_back.png").toString()));
@@ -121,27 +121,27 @@ public class RenderableHolder {
 		furnitureSprite.put("Window",new Image(ClassLoader.getSystemResource("bedroom/Window.png").toString()));
 		furnitureSprite.put("OpenedWindow",new Image(ClassLoader.getSystemResource("bedroom/OpenedWindow.png").toString()));
 		furnitureSprite.put("Cupboard",new Image(ClassLoader.getSystemResource("bedroom/Cupboard.png").toString()));
-		furnitureSprite.put("OpenedCupboard",new Image(ClassLoader.getSystemResource("bedroom/OpenedCupboard.png").toString()));
+		furnitureSprite.put("OpenedCupboard",new Image(ClassLoader.getSystemResource("bedroom/OpenedCupBoard.png").toString()));
 		furnitureSprite.put("Chair",new Image(ClassLoader.getSystemResource("bedroom/Chair.png").toString()));
 	}
 	
 	private static void loadLivingRoomResource() {
-		background.put("LivingRoom",new Image(ClassLoader.getSystemResource("livingroom/LivingRoomBG.png").toString()));
+		background.put("LivingRoom",new Image(ClassLoader.getSystemResource("livingRoom/LivingRoomBG.png").toString()));
 		
-		furnitureSprite.put("IvyPic",new Image(ClassLoader.getSystemResource("livingroom/IvyPic.png").toString()));
-		furnitureSprite.put("FamilyPic",new Image(ClassLoader.getSystemResource("livingroom/FamilyPic.png").toString()));
-		furnitureSprite.put("ShieldPic",new Image(ClassLoader.getSystemResource("livingroom/ShieldPic.png").toString()));
+		furnitureSprite.put("IvyPic",new Image(ClassLoader.getSystemResource("livingRoom/IvyPic.png").toString()));
+		furnitureSprite.put("FamilyPic",new Image(ClassLoader.getSystemResource("livingRoom/FamilyPic.png").toString()));
+		furnitureSprite.put("ShieldPic",new Image(ClassLoader.getSystemResource("livingRoom/ShieldPic.png").toString()));
 		
-		furnitureSprite.put("OpenedSafe",new Image(ClassLoader.getSystemResource("livingroom/OpenedSafe.png").toString()));
-		furnitureSprite.put("ClosedSafe",new Image(ClassLoader.getSystemResource("livingroom/Safe.png").toString()));
+		furnitureSprite.put("OpenedSafe",new Image(ClassLoader.getSystemResource("livingRoom/OpenedSafe.png").toString()));
+		furnitureSprite.put("ClosedSafe",new Image(ClassLoader.getSystemResource("livingRoom/Safe.png").toString()));
 		
-		furnitureSprite.put("FrontSofa",new Image(ClassLoader.getSystemResource("livingroom/FrontSofa.png").toString()));
-		furnitureSprite.put("CutSofa",new Image(ClassLoader.getSystemResource("livingroom/TearedSofa.png").toString()));
-		furnitureSprite.put("LeftSofa",new Image(ClassLoader.getSystemResource("livingroom/LeftSofa.png").toString()));
-		furnitureSprite.put("RightSofa",new Image(ClassLoader.getSystemResource("livingroom/RightSofa.png").toString()));
-		furnitureSprite.put("SouthSofa",new Image(ClassLoader.getSystemResource("livingroom/SouthSofa.png").toString()));
+		furnitureSprite.put("FrontSofa",new Image(ClassLoader.getSystemResource("livingRoom/FrontSofa.png").toString()));
+		furnitureSprite.put("CutSofa",new Image(ClassLoader.getSystemResource("livingRoom/TearedSofa.png").toString()));
+		furnitureSprite.put("LeftSofa",new Image(ClassLoader.getSystemResource("livingRoom/LeftSofa.png").toString()));
+		furnitureSprite.put("RightSofa",new Image(ClassLoader.getSystemResource("livingRoom/RightSofa.png").toString()));
+		furnitureSprite.put("SouthSofa",new Image(ClassLoader.getSystemResource("livingRoom/SouthSofa.png").toString()));
 		
-		furnitureSprite.put("LongTableWithLamp",new Image(ClassLoader.getSystemResource("livingroom/LongTableWithLamp.png").toString()));
+		furnitureSprite.put("LongTableWithLamp",new Image(ClassLoader.getSystemResource("livingRoom/LongTableWithLamp.png").toString()));
 	
 	}
 	
