@@ -106,7 +106,6 @@ public class GameController {
 		
 		makeSceneFadeTransition(isWin);
 		
-		return;
 	}
 	
 	private static void makeSceneFadeTransition(boolean isWin ) {

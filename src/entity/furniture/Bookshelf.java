@@ -11,25 +11,18 @@ import gui.DialoguePane;
 
 public class Bookshelf extends Container{
 	
-	private ArrayList<Item> item;
 	private boolean isObserve;
 	
 	public Bookshelf(String name, int xPosition, int yPosition, int z) {
 		super(name, xPosition, yPosition, z);		
-		item = new ArrayList<Item>();
+	
 		isObserve = false;
 	}
 
-	public ArrayList<Item> getItem() {
-		return item;
-	}
-
-	public void setItem(ArrayList<Item> item) {
-		this.item = item;
-	}
-	
 	@Override
 	public void observe() {
+		
+		ArrayList<Item> item = this.getItem();
 		if( !isObserve ) {
 			isObserve = true;
 			

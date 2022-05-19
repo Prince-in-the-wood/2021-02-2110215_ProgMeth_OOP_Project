@@ -14,7 +14,6 @@ public class CharacterPane extends StackPane {
 		
 		this.setAlignment(Pos.CENTER);
 	
-		//this.setPadding(new Insets(20));
 	}
 	
 	public void setCharacterPane() {
