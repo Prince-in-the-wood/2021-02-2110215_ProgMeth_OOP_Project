@@ -3,12 +3,9 @@ package entity.base;
 import java.util.ArrayList;
 
 import entity.furniture.Door;
-import entity.item.Note;
 import gui.DialoguePane;
-import input.InputUtility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import logic.GameController;
 import logic.Player;

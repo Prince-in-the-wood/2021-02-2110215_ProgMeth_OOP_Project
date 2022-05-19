@@ -51,14 +51,14 @@ public class Library extends Room{
 							+ "I stay here since the morning but no one call me for lunch”\n"
 							+ "Forget? Is she their child?");
 		
-		Note noteWithDoll = new Note("Note3",  280, 420, 7,
+		Note noteWithDoll = new Note("Note3",  280, 400, 7,
 							"“Scilla, I first met her in this library. My mom gave it to me.\n"
 							+ "She said Scilla is beautiful and meaningful. Constancy…\n"
 							+ "I think my mom wants me to still believe in my health.\n"
 							+ "Thanks, mom. I always love your gifts.”\n"
 							+ "Believe in her health? Is she sick?\n");
 		noteWithDoll.setImageString("Scilla");
-		Key doorKey = new Key("Key", 300, 440, 8, door ); 
+		Key doorKey = new Key("Key", 300, 420, 8, door ); 
 		
 		tableWithNote.getItem().add(note1);
 		bookshelf2.getItem().add(note2);

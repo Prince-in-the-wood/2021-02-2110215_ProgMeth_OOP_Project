@@ -2,8 +2,6 @@ package entity.furniture;
 
 import entity.base.Furniture;
 import gui.DialoguePane;
-import javafx.scene.canvas.GraphicsContext;
-import sharedObject.RenderableHolder;
 
 public class Picture extends Furniture {
 

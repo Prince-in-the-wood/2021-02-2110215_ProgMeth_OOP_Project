@@ -8,7 +8,6 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -40,7 +39,7 @@ public class InstructionPane extends VBox {
 		this.getChildren().addAll(header, howToPlayPic );
 	}
 	
-	public void initializeHeaderText() {
+	private void initializeHeaderText() {
 
 		header = new Text("How to play");
 		
@@ -53,7 +52,7 @@ public class InstructionPane extends VBox {
 		header.setTextAlignment(TextAlignment.CENTER);
 	}
 	
-	public void initializeHowToPlayPic() {
+	private void initializeHowToPlayPic() {
 		howToPlayPic = new ImageView(RenderableHolder.background.get("HowToPlay"));
 		howToPlayPic.setFitWidth(400);
 		howToPlayPic.setPreserveRatio(true);

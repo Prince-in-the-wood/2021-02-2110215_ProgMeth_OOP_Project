@@ -1,7 +1,5 @@
 package gui.room;
 
-import java.util.ArrayList;
-
 import entity.base.Emotion;
 import entity.base.Furniture;
 import entity.base.Room;

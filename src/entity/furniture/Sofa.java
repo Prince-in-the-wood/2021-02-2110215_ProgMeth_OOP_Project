@@ -4,13 +4,11 @@ import java.util.ArrayList;
 
 import entity.base.Cuttable;
 import entity.base.Furniture;
-import entity.base.Container;
 import entity.base.Item;
 import entity.item.Key;
 import entity.item.Note;
 import entity.item.PocketKnife;
 import gui.DialoguePane;
-import javafx.scene.canvas.GraphicsContext;
 import logic.Player;
 import sharedObject.RenderableHolder;
 

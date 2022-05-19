@@ -1,6 +1,5 @@
 package gui;
 
-import entity.base.Emotion;
 import javafx.geometry.Pos;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;

@@ -10,14 +10,6 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.BorderStroke;
-import javafx.scene.layout.BorderStrokeStyle;
-import javafx.scene.layout.BorderWidths;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -25,7 +17,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import sharedObject.RenderableHolder;
 
-public class EndingScreen extends VBox{
+public class EndingScreen extends StackPane{
 
 	private StackPane endingTextPane;
 	private Button menuButton;
@@ -36,13 +28,20 @@ public class EndingScreen extends VBox{
 		initializeEndingTextPane(isWin);
 		initializeMenuButtonPane();
 		
-		this.getChildren().addAll(endingTextPane, menuButton );
-		this.setPadding(new Insets(60));
-		this.setSpacing(0);
-		this.setAlignment(Pos.TOP_CENTER);
+		VBox box = new VBox();
+		box.setMinWidth(1120);
+		box.setMaxWidth(1120);
 		
-		this.setMaxSize(1120, 760);
-		this.setMinSize(1120, 760);
+		box.getChildren().addAll(endingTextPane, menuButton );
+		box.setSpacing(0);
+		box.setPadding(new Insets(60));
+		box.setAlignment(Pos.TOP_CENTER);
+		
+		this.getChildren().add(box);
+		this.setAlignment(Pos.CENTER_LEFT);
+		
+		this.setHeight(760);
+		this.setWidth(1120);
 
 		BackgroundSize bgSize = new BackgroundSize(1120,760,false,false,false,false);
 		this.setBackground(new Background(new BackgroundImage(RenderableHolder.background.get("EndingScreen"),

@@ -6,7 +6,6 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -40,7 +39,7 @@ public class CreditPane extends VBox {
 		
 	}
 	
-	public void initializeHeaderText() {
+	private void initializeHeaderText() {
 
 		header = new Text("Credit");
 		
@@ -53,7 +52,7 @@ public class CreditPane extends VBox {
 		header.setTextAlignment(TextAlignment.CENTER);
 	}
 	
-	public void initializeBodyText() {
+	private void initializeBodyText() {
 		
 		body = new Text("Designed and Created by\nTongRod99\n\nSupported by\nOur beloved family");
 		body.setFont(RenderableHolder.couriterryFont);
